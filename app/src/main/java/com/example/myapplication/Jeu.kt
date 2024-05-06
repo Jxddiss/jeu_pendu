@@ -15,15 +15,11 @@ class Jeu(jeu: ArrayList<String>) {
        motADeviner = jeu[randomIndex]
    }
 
-   fun essayerUneLettre(lettre : Char) : ArrayList<Int> {
+   /*fun essayerUneLettre(lettre : Char) : ArrayList<Int> {
        var uneListe: ArrayList<Int>
        for(uneLettre in jeu) {
             
        }
-   }
-
-
-
-
+   }*/
 
 }

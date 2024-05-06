@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="jouer">Jouer</string>
+    <string name="jeu_du_pendu">Jeu du pendu!</string>
+    <string name="historique">Historique</string>
+    <string name="preferences">Préférences</string>
 </resources>

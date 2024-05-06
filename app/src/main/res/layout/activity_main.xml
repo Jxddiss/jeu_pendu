@@ -12,6 +12,7 @@
         android:layout_height="81dp"
         android:layout_marginTop="80dp"
         android:background="@android:drawable/editbox_background"
+        android:fontFamily="@font/abril_fatface"
         android:outlineProvider="none"
         android:text="@string/jeu_du_pendu"
         android:textAlignment="center"
@@ -26,6 +27,7 @@
         android:layout_height="41dp"
         android:layout_marginBottom="390dp"
         android:backgroundTint="#333131"
+        android:fontFamily="@font/abril_fatface"
         android:text="@string/jouer"
         android:textColorHighlight="#673AB7"
         app:cornerRadius="@dimen/material_emphasis_medium"
@@ -43,6 +45,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#333131"
+        android:fontFamily="@font/abril_fatface"
         android:text="@string/historique"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -54,7 +57,8 @@
         android:layout_marginStart="28dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#333131"
-        android:text="@string/preferences"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/preference_page_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

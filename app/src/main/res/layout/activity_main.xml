@@ -25,7 +25,7 @@
         android:layout_width="156dp"
         android:layout_height="41dp"
         android:layout_marginBottom="390dp"
-        android:background="#673AB7"
+        android:backgroundTint="#333131"
         android:text="@string/jouer"
         android:textColorHighlight="#673AB7"
         app:cornerRadius="@dimen/material_emphasis_medium"
@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="48dp"
+        android:backgroundTint="#333131"
         android:text="@string/historique"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -52,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="48dp"
+        android:backgroundTint="#333131"
         android:text="@string/preferences"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

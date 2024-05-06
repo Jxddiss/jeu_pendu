@@ -30,7 +30,7 @@
         android:fontFamily="@font/abril_fatface"
         android:text="@string/jouer"
         android:textColorHighlight="#673AB7"
-        app:cornerRadius="@dimen/material_emphasis_medium"
+        app:cornerRadius="@dimen/cardview_compat_inset_shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

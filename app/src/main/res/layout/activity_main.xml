@@ -11,7 +11,7 @@
         android:layout_width="294dp"
         android:layout_height="81dp"
         android:layout_marginTop="80dp"
-        android:background="@android:drawable/editbox_background"
+        android:background="@drawable/btn_background"
         android:fontFamily="@font/abril_fatface"
         android:outlineProvider="none"
         android:text="@string/jeu_du_pendu"

@@ -261,7 +261,7 @@
         android:layout_width="337dp"
         android:layout_height="0dp"
         android:layout_marginBottom="149dp"
-        app:layout_constraintBottom_toTopOf="@+id/linaerLayLettres"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayLettresMot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -279,7 +279,7 @@
         app:layout_constraintTop_toBottomOf="@+id/animGifImageView" />
 
     <LinearLayout
-        android:id="@+id/linaerLayLettres"
+        android:id="@+id/linearLayLettresMot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"

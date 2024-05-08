@@ -15,7 +15,7 @@
     <string name="page_preference_bouton_dictionnaire">Dictionnaire</string>
     <string name="lettre_a" translatable="false">Lettre A</string>
     <string name="lettre_b" translatable="false">Lettre B</string>
-    <string name="lettre_c">Lettre C</string>
+    <string name="lettre_c" translatable="false">Lettre C</string>
     <string name="lettre_d" translatable="false">Lettre D</string>
     <string name="lettre_e" translatable="false">Lettre E</string>
     <string name="lettre_f" translatable="false">Lettre F</string>
@@ -39,4 +39,5 @@
     <string name="lettre_x" translatable="false">Lettre X</string>
     <string name="lettre_y" translatable="false">Lettre Y</string>
     <string name="lettre_z" translatable="false">Lettre Z</string>
+    <string name="recommencer">Recommencer</string>
 </resources>

@@ -14,7 +14,7 @@ class PenduJeuActivity : AppCompatActivity() {
 
         gifImageView = findViewById(R.id.animGifImageView)
 
-        Glide.with(this).asGif().load(R.drawable.animationstickman).into(gifImageView);
+        Glide.with(this).asGif().load(R.drawable.phase_one).into(gifImageView);
     }
 
 

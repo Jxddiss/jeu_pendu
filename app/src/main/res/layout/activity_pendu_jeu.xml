@@ -75,6 +75,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/s"
+            android:contentDescription="@string/lettre_s"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="553dp" />
 
@@ -83,6 +84,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/t"
+            android:contentDescription="@string/lettre_t"
             tools:layout_editor_absoluteX="79dp"
             tools:layout_editor_absoluteY="553dp" />
 
@@ -91,6 +93,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/u"
+            android:contentDescription="@string/lettre_u"
             tools:layout_editor_absoluteX="144dp"
             tools:layout_editor_absoluteY="553dp" />
 
@@ -99,6 +102,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/v"
+            android:contentDescription="@string/lettre_v"
             tools:layout_editor_absoluteX="209dp"
             tools:layout_editor_absoluteY="553dp" />
 
@@ -107,6 +111,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/w"
+            android:contentDescription="@string/lettre_w"
             tools:layout_editor_absoluteX="275dp"
             tools:layout_editor_absoluteY="553dp" />
 
@@ -115,6 +120,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/x"
+            android:contentDescription="@string/lettre_x"
             tools:layout_editor_absoluteX="340dp"
             tools:layout_editor_absoluteY="553dp" />
 
@@ -134,6 +140,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/m"
+            android:contentDescription="@string/lettre_m"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="482dp" />
 
@@ -142,6 +149,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/n"
+            android:contentDescription="@string/lettre_n"
             tools:layout_editor_absoluteX="75dp"
             tools:layout_editor_absoluteY="482dp" />
 
@@ -151,6 +159,7 @@
             android:layout_height="65dp"
             android:background="@drawable/o"
             android:backgroundTint="#B1B1B1"
+            android:contentDescription="@string/lettre_o"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="482dp" />
 
@@ -159,6 +168,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/p"
+            android:contentDescription="@string/lettre_p"
             tools:layout_editor_absoluteX="205dp"
             tools:layout_editor_absoluteY="482dp" />
 
@@ -167,6 +177,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/q"
+            android:contentDescription="@string/lettre_q"
             tools:layout_editor_absoluteX="270dp"
             tools:layout_editor_absoluteY="482dp" />
 
@@ -175,6 +186,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/r"
+            android:contentDescription="@string/lettre_r"
             tools:layout_editor_absoluteX="335dp"
             tools:layout_editor_absoluteY="482dp" />
 
@@ -194,6 +206,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/g"
+            android:contentDescription="@string/lettre_g"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="418dp" />
 
@@ -202,6 +215,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/h"
+            android:contentDescription="@string/lettre_h"
             tools:layout_editor_absoluteX="79dp"
             tools:layout_editor_absoluteY="418dp" />
 
@@ -210,6 +224,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/i"
+            android:contentDescription="@string/lettre_i"
             tools:layout_editor_absoluteX="144dp"
             tools:layout_editor_absoluteY="418dp" />
 
@@ -218,6 +233,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/j"
+            android:contentDescription="@string/lettre_j"
             tools:layout_editor_absoluteX="209dp"
             tools:layout_editor_absoluteY="418dp" />
 
@@ -226,6 +242,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/k"
+            android:contentDescription="@string/lettre_k"
             tools:layout_editor_absoluteX="275dp"
             tools:layout_editor_absoluteY="418dp" />
 
@@ -234,6 +251,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/l"
+            android:contentDescription="@string/lettre_l"
             tools:layout_editor_absoluteX="340dp"
             tools:layout_editor_absoluteY="418dp" />
 
@@ -265,13 +283,15 @@
             android:id="@+id/btnY"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/y" />
+            android:background="@drawable/y"
+            android:contentDescription="@string/lettre_y" />
 
         <ImageButton
             android:id="@+id/btnZ"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/z" />
+            android:background="@drawable/z"
+            android:contentDescription="@string/lettre_z" />
 
         <Button
             android:id="@+id/button2"

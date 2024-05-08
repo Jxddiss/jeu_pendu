@@ -1,33 +1,33 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="preference_page_name">Préférences</string>
-    <string name="jouer">Jouer</string>
+    <string name="jouer" translatable="true">Jouer</string>
     <string name="jeu_du_pendu">Jeu du pendu!</string>
     <string name="historique">Historique</string>
     <string name="choix_language">Choisissez votre langue:</string>
-    <string name="lettre_a">Lettre A</string>
-    <string name="lettre_b">Lettre B</string>
-    <string name="lettre_c">Lettre C</string>
-    <string name="lettre_d">Lettre D</string>
-    <string name="lettre_e">Lettre E</string>
-    <string name="lettre_f">Lettre F</string>
-    <string name="lettre_g">Lettre G</string>
-    <string name="lettre_h">Lettre H</string>
-    <string name="lettre_j">Lettre J</string>
-    <string name="lettre_k">Lettre K</string>
-    <string name="lettre_l">Lettre L</string>
-    <string name="lettre_m">Lettre M</string>
-    <string name="lettre_n">Lettre N</string>
-    <string name="lettre_o">Lettre O</string>
-    <string name="lettre_p">Lettre P</string>
-    <string name="lettre_q">Lettre Q</string>
-    <string name="lettre_r">Lettre R</string>
-    <string name="lettre_s">Lettre S</string>
-    <string name="lettre_t">Lettre T</string>
-    <string name="lettre_u">Lettre U</string>
-    <string name="lettre_v">Lettre V</string>
-    <string name="lettre_w">Lettre W</string>
-    <string name="lettre_x">Lettre X</string>
-    <string name="lettre_y">Lettre Y</string>
-    <string name="lettre_z">Lettre Z</string>
+    <string name="lettre_a" translatable="false">Lettre A</string>
+    <string name="lettre_b" translatable="false">Lettre B</string>
+    <string name="lettre_c" translatable="false">Lettre C</string>
+    <string name="lettre_d" translatable="false">Lettre D</string>
+    <string name="lettre_e" translatable="false">Lettre E</string>
+    <string name="lettre_f" translatable="false">Lettre F</string>
+    <string name="lettre_g" translatable="false">Lettre G</string>
+    <string name="lettre_h" translatable="false">Lettre H</string>
+    <string name="lettre_j" translatable="false">Lettre J</string>
+    <string name="lettre_k" translatable="false">Lettre K</string>
+    <string name="lettre_l" translatable="false">Lettre L</string>
+    <string name="lettre_m" translatable="false">Lettre M</string>
+    <string name="lettre_n" translatable="false">Lettre N</string>
+    <string name="lettre_o" translatable="false">Lettre O</string>
+    <string name="lettre_p" translatable="false">Lettre P</string>
+    <string name="lettre_q" translatable="false">Lettre Q</string>
+    <string name="lettre_r" translatable="false">Lettre R</string>
+    <string name="lettre_s" translatable="false">Lettre S</string>
+    <string name="lettre_t" translatable="false">Lettre T</string>
+    <string name="lettre_u" translatable="false">Lettre U</string>
+    <string name="lettre_v" translatable="false">Lettre V</string>
+    <string name="lettre_w" translatable="false">Lettre W</string>
+    <string name="lettre_x" translatable="false">Lettre X</string>
+    <string name="lettre_y" translatable="false">Lettre Y</string>
+    <string name="lettre_z" translatable="false">Lettre Z</string>
 </resources>

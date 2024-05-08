@@ -21,37 +21,43 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/a"
-            android:backgroundTint="#C80F0F" />
+            android:backgroundTint="#C80F0F"
+            android:contentDescription="@string/lettre_a" />
 
         <ImageButton
             android:id="@+id/btnB"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/b" />
+            android:background="@drawable/b"
+            android:contentDescription="@string/lettre_b" />
 
         <ImageButton
             android:id="@+id/btnC"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/c" />
+            android:background="@drawable/c"
+            android:contentDescription="@string/lettre_c" />
 
         <ImageButton
             android:id="@+id/btnD"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/d" />
+            android:background="@drawable/d"
+            android:contentDescription="@string/lettre_d" />
 
         <ImageButton
             android:id="@+id/btnE"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/e" />
+            android:background="@drawable/e"
+            android:contentDescription="@string/lettre_e" />
 
         <ImageButton
             android:id="@+id/btnF"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:background="@drawable/f" />
+            android:background="@drawable/f"
+            android:contentDescription="@string/lettre_f" />
 
     </LinearLayout>
 
@@ -235,13 +241,25 @@
 
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:fontFamily="@font/caveat"
+            android:text="Historique"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/btnY"
@@ -254,6 +272,19 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/z" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:fontFamily="@font/caveat"
+            android:text="Restart"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:iconTint="#090909" />
     </LinearLayout>
 
     <ImageView

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEFEFE"
-    tools:context=".penduJeuActivity">
+    tools:context=".PenduJeuActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -261,7 +261,7 @@
         android:id="@+id/linearLayout8"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="125dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -277,7 +277,8 @@
             android:text="Historique"
             android:textColor="#000000"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:backgroundTint="#070707" />
 
         <ImageButton
             android:id="@+id/btnY"
@@ -304,6 +305,7 @@
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:backgroundTint="#070707"
             app:iconTint="#090909" />
     </LinearLayout>
 
@@ -311,7 +313,7 @@
         android:id="@+id/animGifImageView"
         android:layout_width="337dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayLettresMot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -322,7 +324,7 @@
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -333,14 +335,14 @@
         android:id="@+id/button3"
         android:layout_width="185dp"
         android:layout_height="65dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/btn_background"
-        android:backgroundTint="#070707"
         android:fontFamily="@font/caveat"
         android:text="Recommencer"
         android:textColor="#040404"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:backgroundTint="#070707"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -351,12 +353,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginBottom="475dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animGifImageView">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/imageView2"

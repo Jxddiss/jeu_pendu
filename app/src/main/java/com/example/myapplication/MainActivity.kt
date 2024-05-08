@@ -7,6 +7,7 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnStart: Button
+    lateinit var btnPreference: Button
 
     companion object {
 
@@ -17,10 +18,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnStart = findViewById(R.id.btnJeu)
+        btnPreference = findViewById(R.id.btnPreference)
 
         btnStart.setOnClickListener {
             val intent: Intent = Intent(this, PenduJeuActivity::class.java)
             startActivity(intent)
+        }
+
+        btnPreference.setOnClickListener {
+            val intentPreference: Intent = Intent(this, PreferencesActivity::class.java)
+            startActivity(intentPreference)
         }
     }
 }

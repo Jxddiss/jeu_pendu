@@ -292,35 +292,50 @@
         app:layout_constraintTop_toBottomOf="@+id/animGifImageView">
 
         <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/btn_background" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/btn_background" />
+
+        <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/btn_background" />
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/btn_background" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1" />
 
         <ImageView
             android:id="@+id/imageView9"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_weight="1" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background" />
 
         <ImageView
             android:id="@+id/imageView10"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/btn_background" />
     </LinearLayout>

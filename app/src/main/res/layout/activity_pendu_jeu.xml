@@ -17,43 +17,42 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/btnA"
+            android:id="@+id/btn1"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/a"
-            android:backgroundTint="#C80F0F"
             android:contentDescription="@string/lettre_a" />
 
         <ImageButton
-            android:id="@+id/btnB"
+            android:id="@+id/btn2"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/b"
             android:contentDescription="@string/lettre_b" />
 
         <ImageButton
-            android:id="@+id/btnC"
+            android:id="@+id/btn3"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/c"
             android:contentDescription="@string/lettre_c" />
 
         <ImageButton
-            android:id="@+id/btnD"
+            android:id="@+id/btn4"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/d"
             android:contentDescription="@string/lettre_d" />
 
         <ImageButton
-            android:id="@+id/btnE"
+            android:id="@+id/btn5"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/e"
             android:contentDescription="@string/lettre_e" />
 
         <ImageButton
-            android:id="@+id/btnF"
+            android:id="@+id/btn6"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/f"
@@ -71,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/btnS"
+            android:id="@+id/btn19"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/s"
@@ -80,7 +79,7 @@
             tools:layout_editor_absoluteY="553dp" />
 
         <ImageButton
-            android:id="@+id/btnT"
+            android:id="@+id/btn20"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/t"
@@ -89,7 +88,7 @@
             tools:layout_editor_absoluteY="553dp" />
 
         <ImageButton
-            android:id="@+id/btnU"
+            android:id="@+id/btn21"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/u"
@@ -98,7 +97,7 @@
             tools:layout_editor_absoluteY="553dp" />
 
         <ImageButton
-            android:id="@+id/btnV"
+            android:id="@+id/btn22"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/v"
@@ -107,7 +106,7 @@
             tools:layout_editor_absoluteY="553dp" />
 
         <ImageButton
-            android:id="@+id/btnW"
+            android:id="@+id/btn23"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/w"
@@ -116,7 +115,7 @@
             tools:layout_editor_absoluteY="553dp" />
 
         <ImageButton
-            android:id="@+id/btnX"
+            android:id="@+id/btn24"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/x"
@@ -136,7 +135,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/btnM"
+            android:id="@+id/btn13"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/m"
@@ -145,7 +144,7 @@
             tools:layout_editor_absoluteY="482dp" />
 
         <ImageButton
-            android:id="@+id/btnN"
+            android:id="@+id/btn14"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/n"
@@ -154,17 +153,16 @@
             tools:layout_editor_absoluteY="482dp" />
 
         <ImageButton
-            android:id="@+id/btnO"
+            android:id="@+id/btn15"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/o"
-            android:backgroundTint="#B1B1B1"
             android:contentDescription="@string/lettre_o"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="482dp" />
 
         <ImageButton
-            android:id="@+id/btnP"
+            android:id="@+id/btn16"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/p"
@@ -173,7 +171,7 @@
             tools:layout_editor_absoluteY="482dp" />
 
         <ImageButton
-            android:id="@+id/btnQ"
+            android:id="@+id/btn17"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/q"
@@ -182,7 +180,7 @@
             tools:layout_editor_absoluteY="482dp" />
 
         <ImageButton
-            android:id="@+id/btnR"
+            android:id="@+id/btn18"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/r"
@@ -202,7 +200,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/btnG"
+            android:id="@+id/btn7"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/g"
@@ -211,7 +209,7 @@
             tools:layout_editor_absoluteY="418dp" />
 
         <ImageButton
-            android:id="@+id/btnH"
+            android:id="@+id/btn8"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/h"
@@ -220,7 +218,7 @@
             tools:layout_editor_absoluteY="418dp" />
 
         <ImageButton
-            android:id="@+id/btnI"
+            android:id="@+id/btn9"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/i"
@@ -229,7 +227,7 @@
             tools:layout_editor_absoluteY="418dp" />
 
         <ImageButton
-            android:id="@+id/btnJ"
+            android:id="@+id/btn10"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/j"
@@ -238,7 +236,7 @@
             tools:layout_editor_absoluteY="418dp" />
 
         <ImageButton
-            android:id="@+id/btnK"
+            android:id="@+id/btn11"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/k"
@@ -247,7 +245,7 @@
             tools:layout_editor_absoluteY="418dp" />
 
         <ImageButton
-            android:id="@+id/btnL"
+            android:id="@+id/btn12"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/l"
@@ -281,14 +279,14 @@
             app:backgroundTint="#070707" />
 
         <ImageButton
-            android:id="@+id/btnY"
+            android:id="@+id/btn25"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/y"
             android:contentDescription="@string/lettre_y" />
 
         <ImageButton
-            android:id="@+id/btnZ"
+            android:id="@+id/btn26"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/z"

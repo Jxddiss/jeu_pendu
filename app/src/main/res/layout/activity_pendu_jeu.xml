@@ -354,7 +354,7 @@
         app:layout_constraintTop_toBottomOf="@+id/animGifImageView" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRestartJeu"
         android:layout_width="185dp"
         android:layout_height="65dp"
         android:layout_marginBottom="60dp"

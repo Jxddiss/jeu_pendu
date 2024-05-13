@@ -8,6 +8,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -20,13 +21,22 @@ private const val NB_ERREURS_MAX = 6
 class PenduJeuActivity : AppCompatActivity() {
     lateinit var gifImageView: ImageView
     lateinit var letterPlaceholder: LinearLayout
+    lateinit var btnRecommencer: Button
     lateinit var jeu: Jeu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
 
-        jeu = Jeu(mutableListOf("journee","biscuit", "orange", "pomme") as ArrayList)
+        btnRecommencer = findViewById(R.id.btnRestartJeu)
+
+        btnRecommencer.setOnClickListener {
+            it.background.setTint(Color.GRAY)
+            it.background.alpha = 100
+            this.recreate()
+        }
+
+        jeu = Jeu(mutableListOf("journee","biscuit", "orange", "pomme","bananne") as ArrayList)
         gifImageView = findViewById(R.id.animGifImageView)
         letterPlaceholder = findViewById(R.id.linearLayLettresMot)
         initialiserLetterPlaceHolder()

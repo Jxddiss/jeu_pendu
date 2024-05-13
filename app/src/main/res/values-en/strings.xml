@@ -16,4 +16,5 @@
     <string name="page_preference_bouton_dictionnaire">Dictionnary</string>
     <string name="recommencer">Retry</string>
     <string name="message_game_over">You lost</string>
+    <string name="menu">Menu</string>
 </resources>

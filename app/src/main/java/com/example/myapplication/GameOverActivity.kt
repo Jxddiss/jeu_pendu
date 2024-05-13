@@ -5,22 +5,26 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class GameOverActivity : AppCompatActivity() {
+    lateinit var btnMenu : Button
     lateinit var btnRestart : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_game_over)
 
-        btnRestart = findViewById(R.id.btnMenu)
+        btnMenu = findViewById(R.id.btnMenuGameOver)
 
-        btnRestart.setOnClickListener {
+        btnMenu.setOnClickListener {
             val intent : Intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
 
+        btnRestart = findViewById(R.id.btnRestartGameOver)
+        btnRestart.setOnClickListener {
+            val intent : Intent = Intent(this,PenduJeuActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

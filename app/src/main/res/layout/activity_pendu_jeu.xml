@@ -21,6 +21,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/a"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_a" />
 
         <ImageButton
@@ -28,6 +29,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/b"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_b" />
 
         <ImageButton
@@ -35,6 +37,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/c"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_c" />
 
         <ImageButton
@@ -42,6 +45,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/d"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_d" />
 
         <ImageButton
@@ -49,6 +53,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/e"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_e" />
 
         <ImageButton
@@ -56,6 +61,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/f"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_f" />
 
     </LinearLayout>
@@ -74,6 +80,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/s"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_s"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="553dp" />
@@ -83,6 +90,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/t"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_t"
             tools:layout_editor_absoluteX="79dp"
             tools:layout_editor_absoluteY="553dp" />
@@ -92,6 +100,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/u"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_u"
             tools:layout_editor_absoluteX="144dp"
             tools:layout_editor_absoluteY="553dp" />
@@ -101,6 +110,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/v"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_v"
             tools:layout_editor_absoluteX="209dp"
             tools:layout_editor_absoluteY="553dp" />
@@ -110,6 +120,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/w"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_w"
             tools:layout_editor_absoluteX="275dp"
             tools:layout_editor_absoluteY="553dp" />
@@ -119,6 +130,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/x"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_x"
             tools:layout_editor_absoluteX="340dp"
             tools:layout_editor_absoluteY="553dp" />
@@ -139,6 +151,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/m"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_m"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="482dp" />
@@ -148,6 +161,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/n"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_n"
             tools:layout_editor_absoluteX="75dp"
             tools:layout_editor_absoluteY="482dp" />
@@ -157,6 +171,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/o"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_o"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="482dp" />
@@ -166,6 +181,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/p"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_p"
             tools:layout_editor_absoluteX="205dp"
             tools:layout_editor_absoluteY="482dp" />
@@ -175,6 +191,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/q"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_q"
             tools:layout_editor_absoluteX="270dp"
             tools:layout_editor_absoluteY="482dp" />
@@ -184,6 +201,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/r"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_r"
             tools:layout_editor_absoluteX="335dp"
             tools:layout_editor_absoluteY="482dp" />
@@ -204,6 +222,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/g"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_g"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="418dp" />
@@ -213,6 +232,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/h"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_h"
             tools:layout_editor_absoluteX="79dp"
             tools:layout_editor_absoluteY="418dp" />
@@ -222,6 +242,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/i"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_i"
             tools:layout_editor_absoluteX="144dp"
             tools:layout_editor_absoluteY="418dp" />
@@ -231,6 +252,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/j"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_j"
             tools:layout_editor_absoluteX="209dp"
             tools:layout_editor_absoluteY="418dp" />
@@ -240,6 +262,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/k"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_k"
             tools:layout_editor_absoluteX="275dp"
             tools:layout_editor_absoluteY="418dp" />
@@ -249,6 +272,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/l"
+            android:backgroundTint="#000000"
             android:contentDescription="@string/lettre_l"
             tools:layout_editor_absoluteX="340dp"
             tools:layout_editor_absoluteY="418dp" />
@@ -266,7 +290,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnHistoriqueJeu"
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:layout_weight="1"
@@ -293,7 +317,7 @@
             android:contentDescription="@string/lettre_z" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnPreferenceJeu"
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:layout_weight="1"
@@ -316,7 +340,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/phase_one" />
+        app:srcCompat="@drawable/phase_1" />
 
     <View
         android:id="@+id/divider"
@@ -355,55 +379,6 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/btn_background" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/btn_background" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_background" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_background" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_background" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_background" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

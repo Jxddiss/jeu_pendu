@@ -13,13 +13,18 @@ class Jeu(var jeu: ArrayList<String>) {
        }
        val randomIndex = Random.nextInt(jeu.size);
        motADeviner = jeu[randomIndex]
+       for (i in 0 until motADeviner.length){
+           if (motADeviner[i].equals(' ')){
+               pointage++
+           }
+       }
    }
 
    fun essayerUneLettre(lettre : Char) : ArrayList<Int> {
        var uneListe: ArrayList<Int> = ArrayList()
 
-       for (i in 0..motADeviner.length){
-           if (lettre == motADeviner[i]){
+       for (i in 0 until motADeviner.length){
+           if (lettre.equals(motADeviner[i],true)){
                pointage++
                uneListe.add(i);
            }

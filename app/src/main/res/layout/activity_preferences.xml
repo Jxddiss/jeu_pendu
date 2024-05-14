@@ -9,13 +9,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="250sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="80dp"
         android:layout_marginBottom="514dp"
         android:fontFamily="@font/caveat"
+        android:gravity="center_horizontal"
         android:text="@string/preference_page_name"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,11 +24,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="50dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +44,7 @@
             tools:layout_editor_absoluteY="299dp" />
 
         <RadioGroup
+            android:id="@+id/btnLangue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -53,15 +52,15 @@
             android:textAlignment="center">
 
             <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="100sp"
+                android:id="@+id/btnLangueFrancais"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caveat"
                 android:text="@string/choix_languageFr"
                 android:textSize="20sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/btnLangueAnglais"
                 android:layout_width="100sp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caveat"
@@ -73,11 +72,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="220dp"
-        android:layout_marginEnd="50dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +92,7 @@
             tools:layout_editor_absoluteY="299dp" />
 
         <RadioGroup
+            android:id="@+id/btnDifficulter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -101,7 +100,7 @@
             android:textAlignment="center">
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/btnDifficulterFacile"
                 android:layout_width="90sp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caveat"
@@ -109,7 +108,7 @@
                 android:textSize="20sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/btnDifficulterNormal"
                 android:layout_width="90sp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caveat"
@@ -117,7 +116,7 @@
                 android:textSize="20sp" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/btnDifficulterDifficile"
                 android:layout_width="90sp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caveat"
@@ -141,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnRetourAccueil"
             android:layout_width="130sp"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
@@ -151,7 +150,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnDictionnaire"
             android:layout_width="130sp"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"

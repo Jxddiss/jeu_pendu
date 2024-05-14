@@ -1,3 +1,45 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="preference_page_name">Préférences</string>
+    <string name="jouer" translatable="true">Jouer</string>
+    <string name="jeu_du_pendu">Jeu du pendu!</string>
+    <string name="historique">Historique</string>
+    <string name="choix_language">Choisissez votre langue:</string>
+    <string name="choix_languageFr">Français</string>
+    <string name="choix_languageEn">Anglais</string>
+    <string name="choix_niveau_difficulté">Niveau de difficulté:</string>
+    <string name="choix_niveau_difficulté_facile">Facile</string>
+    <string name="choix_niveau_difficulté_normal">Normal</string>
+    <string name="choix_niveau_difficulté_difficile">Difficile</string>
+    <string name="page_preference_bouton_accueil">Accueil</string>
+    <string name="page_preference_bouton_dictionnaire">Dictionnaire</string>
+    <string name="lettre_a" translatable="false">A</string>
+    <string name="lettre_b" translatable="false">B</string>
+    <string name="lettre_c" translatable="false">C</string>
+    <string name="lettre_d" translatable="false">D</string>
+    <string name="lettre_e" translatable="false">E</string>
+    <string name="lettre_f" translatable="false">F</string>
+    <string name="lettre_g" translatable="false">G</string>
+    <string name="lettre_h" translatable="false">H</string>
+    <string name="lettre_i" translatable="false">I</string>
+    <string name="lettre_j" translatable="false">J</string>
+    <string name="lettre_k" translatable="false">K</string>
+    <string name="lettre_l" translatable="false">L</string>
+    <string name="lettre_m" translatable="false">M</string>
+    <string name="lettre_n" translatable="false">N</string>
+    <string name="lettre_o" translatable="false">O</string>
+    <string name="lettre_p" translatable="false">P</string>
+    <string name="lettre_q" translatable="false">Q</string>
+    <string name="lettre_r" translatable="false">R</string>
+    <string name="lettre_s" translatable="false">S</string>
+    <string name="lettre_t" translatable="false">T</string>
+    <string name="lettre_u" translatable="false">U</string>
+    <string name="lettre_v" translatable="false">V</string>
+    <string name="lettre_w" translatable="false">W</string>
+    <string name="lettre_x" translatable="false">X</string>
+    <string name="lettre_y" translatable="false">Y</string>
+    <string name="lettre_z" translatable="false">Z</string>
+    <string name="recommencer">Recommencer</string>
+    <string name="message_game_over">Vous avez perdu</string>
+    <string name="menu">Menu</string>
 </resources>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFEFE"
+    tools:context=".PenduJeuActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/a"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_a" />
+
+        <ImageButton
+            android:id="@+id/btn2"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/b"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_b" />
+
+        <ImageButton
+            android:id="@+id/btn3"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/c"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_c" />
+
+        <ImageButton
+            android:id="@+id/btn4"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/d"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_d" />
+
+        <ImageButton
+            android:id="@+id/btn5"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/e"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_e" />
+
+        <ImageButton
+            android:id="@+id/btn6"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/f"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_f" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="392dp"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn19"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/s"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_s"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="553dp" />
+
+        <ImageButton
+            android:id="@+id/btn20"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/t"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_t"
+            tools:layout_editor_absoluteX="79dp"
+            tools:layout_editor_absoluteY="553dp" />
+
+        <ImageButton
+            android:id="@+id/btn21"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/u"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_u"
+            tools:layout_editor_absoluteX="144dp"
+            tools:layout_editor_absoluteY="553dp" />
+
+        <ImageButton
+            android:id="@+id/btn22"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/v"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_v"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="553dp" />
+
+        <ImageButton
+            android:id="@+id/btn23"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/w"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_w"
+            tools:layout_editor_absoluteX="275dp"
+            tools:layout_editor_absoluteY="553dp" />
+
+        <ImageButton
+            android:id="@+id/btn24"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/x"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_x"
+            tools:layout_editor_absoluteX="340dp"
+            tools:layout_editor_absoluteY="553dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn13"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/m"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_m"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <ImageButton
+            android:id="@+id/btn14"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/n"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_n"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <ImageButton
+            android:id="@+id/btn15"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/o"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_o"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <ImageButton
+            android:id="@+id/btn16"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/p"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_p"
+            tools:layout_editor_absoluteX="205dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <ImageButton
+            android:id="@+id/btn17"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/q"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_q"
+            tools:layout_editor_absoluteX="270dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <ImageButton
+            android:id="@+id/btn18"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/r"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_r"
+            tools:layout_editor_absoluteX="335dp"
+            tools:layout_editor_absoluteY="482dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="393dp"
+        android:layout_height="66dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn7"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/g"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_g"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <ImageButton
+            android:id="@+id/btn8"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/h"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_h"
+            tools:layout_editor_absoluteX="79dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <ImageButton
+            android:id="@+id/btn9"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/i"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_i"
+            tools:layout_editor_absoluteX="144dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <ImageButton
+            android:id="@+id/btn10"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/j"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_j"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <ImageButton
+            android:id="@+id/btn11"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/k"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_k"
+            tools:layout_editor_absoluteX="275dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+        <ImageButton
+            android:id="@+id/btn12"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/l"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/lettre_l"
+            tools:layout_editor_absoluteX="340dp"
+            tools:layout_editor_absoluteY="418dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="125dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnHistoriqueJeu"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:fontFamily="@font/caveat"
+            android:text="Historique"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#070707" />
+
+        <ImageButton
+            android:id="@+id/btn25"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/y"
+            android:contentDescription="@string/lettre_y" />
+
+        <ImageButton
+            android:id="@+id/btn26"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/z"
+            android:contentDescription="@string/lettre_z" />
+
+        <Button
+            android:id="@+id/btnPreferenceJeu"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:fontFamily="@font/caveat"
+            android:text="@string/preference_page_name"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#070707"
+            app:iconTint="#090909" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/animGifImageView"
+        android:layout_width="337dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayLettresMot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/phase_1" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animGifImageView" />
+
+    <Button
+        android:id="@+id/btnRestartJeu"
+        android:layout_width="185dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/btn_background"
+        android:fontFamily="@font/caveat"
+        android:text="@string/recommencer"
+        android:textColor="#040404"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#070707"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayLettresMot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="475dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

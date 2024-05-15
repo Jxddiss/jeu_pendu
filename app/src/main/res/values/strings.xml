@@ -5,6 +5,9 @@
     <string name="jeu_du_pendu">Jeu du pendu!</string>
     <string name="historique">Historique</string>
     <string name="choix_language">Choisissez votre langue:</string>
+    <string name="dictionnaire">Dictionnaire</string>
+    <string name="anglais">Anglais</string>
+    <string name="francais">Français</string>
     <string name="lettre_a" translatable="false">Lettre A</string>
     <string name="lettre_b" translatable="false">Lettre B</string>
     <string name="lettre_c" translatable="false">Lettre C</string>
@@ -30,4 +33,8 @@
     <string name="lettre_x" translatable="false">Lettre X</string>
     <string name="lettre_y" translatable="false">Lettre Y</string>
     <string name="lettre_z" translatable="false">Lettre Z</string>
+    <string name="facile">Facile</string>
+    <string name="normal">Normal</string>
+    <string name="difficile">Difficile</string>
+
 </resources>

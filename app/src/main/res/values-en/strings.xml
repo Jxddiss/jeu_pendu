@@ -6,6 +6,12 @@
     <string name="jeu_du_pendu">Hangman!</string>
     <string name="historique">History</string>
     <string name="choix_language">Choose your language:</string>
+    <string name="dictionnaire">Dictionary</string>
+    <string name="anglais">English</string>
+    <string name="francais">French</string>
+    <string name="facile">Easy</string>
+    <string name="normal">Medium</string>
+    <string name="difficile">Hard</string>
     <string name="choix_languageFr">French</string>
     <string name="choix_languageEn">English</string>
     <string name="choix_niveau_difficulté">Choose your difficulty:</string>
@@ -13,8 +19,9 @@
     <string name="choix_niveau_difficulté_normal">Normal</string>
     <string name="choix_niveau_difficulté_difficile">Difficult</string>
     <string name="page_preference_bouton_accueil">Home page</string>
-    <string name="page_preference_bouton_dictionnaire">Dictionnary</string>
+
     <string name="recommencer">Retry</string>
     <string name="message_game_over">You lost</string>
     <string name="menu">Menu</string>
+    <string name="Retirer">Delete</string>
 </resources>

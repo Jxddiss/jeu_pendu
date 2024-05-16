@@ -16,6 +16,7 @@
     <string name="lettre_f" translatable="false">Lettre F</string>
     <string name="lettre_g" translatable="false">Lettre G</string>
     <string name="lettre_h" translatable="false">Lettre H</string>
+    <string name="lettre_i" translatable="false">Lettre I</string>
     <string name="lettre_j" translatable="false">Lettre J</string>
     <string name="lettre_k" translatable="false">Lettre K</string>
     <string name="lettre_l" translatable="false">Lettre L</string>
@@ -33,8 +34,22 @@
     <string name="lettre_x" translatable="false">Lettre X</string>
     <string name="lettre_y" translatable="false">Lettre Y</string>
     <string name="lettre_z" translatable="false">Lettre Z</string>
+    <string name="choix_languageFr">French</string>
+    <string name="choix_languageEn">English</string>
+    <string name="choix_niveau_difficulté">Choose your difficulty:</string>
+    <string name="choix_niveau_difficulté_facile">Easy</string>
+    <string name="choix_niveau_difficulté_normal">Normal</string>
+    <string name="choix_niveau_difficulté_difficile">Difficult</string>
+    <string name="page_preference_bouton_accueil">Home page</string>
+
+    <string name="recommencer">Retry</string>
+    <string name="message_game_over">Vous avez perdu</string>
+    <string name="menu">Menu</string>
     <string name="facile">Facile</string>
     <string name="normal">Normal</string>
     <string name="difficile">Difficile</string>
+    <string name="Retirer">Retirer</string>
+    <string name="title_activity_dictionnaire">DictionnaireActivity</string>
+
 
 </resources>

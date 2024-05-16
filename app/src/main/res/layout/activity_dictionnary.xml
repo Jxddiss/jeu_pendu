@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spinner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DictionnaryActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_background"
+        android:fontFamily="@font/caveat"
+        android:outlineProvider="none"
+        android:text="@string/dictionnaire"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/menu"
+        android:layout_width="162dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="19dp"
+        android:entries="@array/mode"
+
+        />
+
+    <RadioGroup
+        android:id="@+id/choixLangue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/boutonAnglais"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/caveat"
+            android:text="@string/anglais"
+            android:textSize="34sp" />
+
+        <RadioButton
+            android:id="@+id/boutonFrancais"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/caveat"
+            android:text="@string/francais"
+            android:textSize="34sp" />
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="417dp"
+        android:layout_height="330dp"
+        tools:ignore="MissingConstraints">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

@@ -7,6 +7,12 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * La class préférence permet à l'utilisateur de définir la langue voulu
+ * et le niveau de difficulté. Lorsque l'utilisateur clique sur le bouton,
+ * "btnRetourAccueil", l'information est sauvegardé a travers un companion object
+ * et elle est renvoyé a la page accueil.
+ * */
 class PreferencesActivity : AppCompatActivity() {
     lateinit var btnRetourAccueil: Button
     lateinit var btnDictionnaire: Button
@@ -14,6 +20,11 @@ class PreferencesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preferences)
 
+        /*
+         *  Extraction des attributs du bundle parvenant de la page accueil afin
+         *  de précharger l'état actuelle de la langue choisie et le niveau
+         *  de langue.
+         *  */
         val bundle = intent.extras
         var choixLangue = bundle?.getString("choixLangue")
         var choixDifficulte = bundle?.getString("choixDifficulte")
@@ -24,6 +35,9 @@ class PreferencesActivity : AppCompatActivity() {
         val radioGroupLangue: RadioGroup = findViewById(R.id.btnLangue)
         val radioGroupDifficulter: RadioGroup = findViewById(R.id.btnDifficulter)
 
+        /*
+         * Lis la variable choixLangue et coche la bonne case sur l'écran
+         * */
         when (choixLangue?.lowercase()) {
             "français" -> radioGroupLangue.check(R.id.btnLangueFrancais)
             "anglais" -> radioGroupLangue.check(R.id.btnLangueAnglais)
@@ -31,6 +45,9 @@ class PreferencesActivity : AppCompatActivity() {
             "english" -> radioGroupLangue.check(R.id.btnLangueAnglais)
         }
 
+        /*
+         * Lis la variable choixDifficulter et coche la bonne case sur l'écran
+         * */
         when (choixDifficulte?.lowercase()) {
             "facile" -> radioGroupDifficulter.check(R.id.btnDifficulterFacile)
             "normal" -> radioGroupDifficulter.check(R.id.btnDifficulterNormal)
@@ -39,6 +56,10 @@ class PreferencesActivity : AppCompatActivity() {
             "difficult" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
         }
 
+        /*
+         * Fonction qui définie un event listener sur le groupe de bouton radio du choix de langue
+         * et ensuite, vérifie lequel à été cliquer et l'assigne a la variable nécessaire.
+         * */
         radioGroupLangue.setOnCheckedChangeListener { group, checkedId ->
 
             val choixLangueBouton: RadioButton = findViewById(checkedId)
@@ -54,6 +75,10 @@ class PreferencesActivity : AppCompatActivity() {
             }
         }
 
+        /*
+         * Fonction qui définie un event listener sur le groupe de bouton radio du choix de difficulté
+         * et ensuite, vérifie lequel à été cliquer et l'assigne a la variable nécessaire.
+         * */
         radioGroupDifficulter.setOnCheckedChangeListener { group, checkedId ->
 
             val choixDifficulterBouton: RadioButton = findViewById(checkedId)
@@ -73,6 +98,10 @@ class PreferencesActivity : AppCompatActivity() {
 
         }
 
+        /*
+        * Un event listener sur le bouton retour à l'accueil qui créer une nouvelle bundle
+        * et envoie les deux variables du choix de langue et de difficulté.
+        * */
         btnRetourAccueil.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
 

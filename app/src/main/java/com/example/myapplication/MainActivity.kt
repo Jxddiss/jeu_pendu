@@ -10,6 +10,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnStart: Button
     lateinit var btnPreference: Button
 
+    /*
+    * Companion object qui contient le choix de langue et le niveau de difficulter choisie par
+    * l'utilisateur, ainsi que la liste de mot spécifique à ces paramétre.
+    * */
     companion object {
         var choixLangue: String = ""
         var choixDifficulte: String = ""

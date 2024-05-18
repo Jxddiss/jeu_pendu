@@ -1,9 +1,8 @@
 package com.example.myapplication.model
 
-data class Mot(val id: String,
-            val lettres : String,
-               val langue : String,
-               val difficulte : String
-               ){
+data class Mot(var motFrancais : String,
+               var motAnglais : String,
+               var difficulte : String = "facile",
+               var id: Int){
 
 }

@@ -14,13 +14,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         const val DATABASE_VERSION = 1
         const val TABLE_NAME = "Mot"
         const val COLUMN_ID = "id"
-        const val COLUMN_LETTRES = "lettre"
-        const val COLUMN_LANGUE = "langue"
+        const val COLUMN_MOT_FRANCAIS = "motfrancais"
+        const val COLUMN_MOT_ANGLAIS = "motanglais"
         const val COLUMN_DIFFICULTE = "difficulte"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val CREATE_TABLE = "CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_LETTRES TEXT, $COLUMN_LANGUE TEXT, $COLUMN_DIFFICULTE TEXT)"
+        val CREATE_TABLE = "CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMN_MOT_FRANCAIS TEXT, $COLUMN_MOT_ANGLAIS TEXT, $COLUMN_DIFFICULTE TEXT)"
         db?.execSQL(CREATE_TABLE)
     }
 
@@ -30,23 +30,5 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         onCreate(db)
     }
 
-    fun insertMot(mot: Mot){
-        val db = writableDatabase
-        val values = ContentValues().apply {
-            put(COLUMN_LETTRES,mot.lettres)
-            put(COLUMN_LANGUE, mot.langue)
-            put(COLUMN_DIFFICULTE, mot.difficulte)
-        }
 
-        db.insert(TABLE_NAME,null,values)
-        db.close()
-    }
-
-    fun deleteMot(mot: Mot){
-        val db = writableDatabase
-        val selection = "$COLUMN_ID = ?"
-        val selectionArgs = arrayOf(mot.id.toString())
-        db.delete(TABLE_NAME, selection, selectionArgs)
-        db.close()
-    }
 }

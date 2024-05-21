@@ -35,7 +35,7 @@ class PenduJeuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
 
-        listeMotString = motDAO.getAllMotStringByLange(choixLangue, choixDifficulte) as ArrayList
+        listeMotString = motDAO.getAllMotStringByLangue(choixLangue, choixDifficulte) as ArrayList
         if(listeMotString.isEmpty()){
             listeMotString = mutableListOf("Allo","test") as ArrayList
         }

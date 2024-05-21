@@ -37,7 +37,7 @@ class MotDAO(private val helper: DatabaseHelper) {
         return motList
     }
 
-    fun getAllMotStringByLange(langue : String, difficulte : String):List<String>{
+    fun getAllMotStringByLangue(langue : String, difficulte : String):List<String>{
         val motList = mutableListOf<String>()
         val db = helper.readableDatabase
         val query = "SELECT * FROM ${DatabaseHelper.TABLE_NAME} WHERE ${DatabaseHelper.COLUMN_DIFFICULTE} = ? " +
@@ -54,7 +54,7 @@ class MotDAO(private val helper: DatabaseHelper) {
         val cursor = db.rawQuery(query, arrayOf(difficulte,tradDifficulte))
 
         while (cursor.moveToNext()){
-            when(langue){
+            when(langue.lowercase()){
                 "français" -> {
                     val motFrancais = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_MOT_FRANCAIS))
                     motList.add(motFrancais)
@@ -72,8 +72,6 @@ class MotDAO(private val helper: DatabaseHelper) {
                     motList.add(motAnglais)
                 }
             }
-
-
         }
         cursor.close()
         db.close()

@@ -64,22 +64,33 @@ class DictionnaryActivity : AppCompatActivity() {
 
         motList = motDAO.getAllMot() as ArrayList<Mot>
 
-        setInfoAdapter(true)
         when (choixLangue.lowercase()) {
-            "français" -> {radioGroup.check(R.id.boutonFrancais)
-            setInfoAdapter(true)}
-            "anglais" -> {radioGroup.check(R.id.boutonAnglais)
-                setInfoAdapter(false)}
-            "french" -> {radioGroup.check(R.id.boutonFrancais)
-                setInfoAdapter(true)}
-            "english" -> {radioGroup.check(R.id.boutonAnglais)
-                setInfoAdapter(false)}
+            "français" -> {
+                radioGroup.check(R.id.boutonFrancais)
+                setInfoAdapter(true)
+                adapter.notifyDataSetChanged()
+            }
+            "anglais" -> {
+                radioGroup.check(R.id.boutonAnglais)
+                setInfoAdapter(false)
+                adapter.notifyDataSetChanged()
+            }
+            "french" -> {
+                radioGroup.check(R.id.boutonFrancais)
+                setInfoAdapter(true)
+                adapter.notifyDataSetChanged()
+            }
+            "english" -> {
+                radioGroup.check(R.id.boutonAnglais)
+                setInfoAdapter(false)
+                adapter.notifyDataSetChanged()
+            }
         }
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
 
             when (checkedId) {
-                R.id.boutonAnglais -> setInfoAdapter(true)
-                R.id.boutonFrancais -> setInfoAdapter(false)
+                R.id.boutonAnglais -> setInfoAdapter(false)
+                R.id.boutonFrancais -> setInfoAdapter(true)
             }
         }
 
@@ -96,7 +107,6 @@ class DictionnaryActivity : AppCompatActivity() {
                     0 -> updateDif("Facile")
                     1 -> updateDif("Normal")
                     2 -> updateDif("Difficile")
-
                 }
             }
 
@@ -112,7 +122,7 @@ class DictionnaryActivity : AppCompatActivity() {
 
             val dao = MotDAO(DatabaseHelper(this))
             var motfr = francaisAjout.text.toString().lowercase()
-            var moten = francaisAjout.text.toString().lowercase()
+            var moten = anglaisAjout.text.toString().lowercase()
             var diff = spinnerAjout.selectedItem.toString().lowercase()
             dao.insertMot(motfr,moten,diff)
             onResume()

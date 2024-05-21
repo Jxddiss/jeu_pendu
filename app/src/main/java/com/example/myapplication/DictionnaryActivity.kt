@@ -9,9 +9,11 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.MainActivity.Companion.choixDifficulte
 import com.example.myapplication.MainActivity.Companion.choixLangue
 import com.example.myapplication.databasehelper.DatabaseHelper
 import com.example.myapplication.databasehelper.MotDAO
@@ -59,6 +61,7 @@ class DictionnaryActivity : AppCompatActivity() {
         motList = motDAO.getAllMot() as ArrayList<Mot>
         motListDisplayed.addAll(motList)
 
+        // Set le bouton selectionner selon le choix de langue
         when (choixLangue) {
             "français" -> {
                 radioGroup.check(R.id.boutonFrancais)
@@ -83,6 +86,15 @@ class DictionnaryActivity : AppCompatActivity() {
                 R.id.boutonAnglais -> setInfoAdapter(false)
                 R.id.boutonFrancais -> setInfoAdapter(true)
             }
+        }
+
+        // Set l'option de spinner selectionner selon le choix de difficultée
+        when(choixDifficulte){
+            "facile"-> spinnerRecherche.setSelection(0)
+            "normal"-> spinnerRecherche.setSelection(1)
+            "difficile"-> spinnerRecherche.setSelection(2)
+            "easy"-> spinnerRecherche.setSelection(0)
+            "hard"-> spinnerRecherche.setSelection(2)
         }
 
         /*

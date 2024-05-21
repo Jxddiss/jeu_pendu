@@ -22,8 +22,8 @@ import com.example.myapplication.recycleradapter.RecyclerAdapter
 import java.util.stream.Collectors
 
 class DictionnaryActivity : AppCompatActivity() {
-    lateinit var motList : ArrayList<Mot>
-    lateinit var motListDisplayed : ArrayList<Mot>
+    lateinit var motList : ArrayList<Mot> // Liste de tout les mots de la base de donnée
+    lateinit var motListDisplayed : ArrayList<Mot> // Liste de mot utiliser pour afficher
     lateinit var recycler : RecyclerView
 
     lateinit var btnAjouter : Button
@@ -100,6 +100,8 @@ class DictionnaryActivity : AppCompatActivity() {
         /*
         * Ajout d'un event listenner qui va appeler la méthode updateDif selon
         * la difficulter selectionner dans le spinner
+        *
+        * source : https://stackoverflow.com/questions/46447296/android-kotlin-onitemselectedlistener-for-spinner-not-working
         * */
         spinnerRecherche.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -134,7 +136,8 @@ class DictionnaryActivity : AppCompatActivity() {
 
     /**
      * change le display du recycler view selon la difficulté
-     * sélectionnée
+     * sélectionnée en filtrant la liste de tout les mots selon la
+     * difficultée et en mettant à jour la liste displayed
      *
      * @param difficulte Difficulté choisi
      * */

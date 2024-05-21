@@ -17,10 +17,10 @@ class MotDAOTest {
 
 
         // When
-        motDAO.insertMot("salut","hi","facile")
-        motDAO.insertMot("salut","hi","facile")
-        motDAO.insertMot("salut","hi","facile")
-        motDAO.insertMot("salut","hi","facile")
+        motDAO.insertMot("bonjour","hi","facile")
+        motDAO.insertMot("biscuit","cookie","facile")
+        motDAO.insertMot("aeroport","airport","normal")
+        motDAO.insertMot("journee","day","facile")
 
         // Then
         var list :List<Mot> =motDAO.getAllMot()

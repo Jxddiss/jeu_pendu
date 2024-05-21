@@ -111,9 +111,9 @@ class DictionnaryActivity : AppCompatActivity() {
         btnAjouter.setOnClickListener {
 
             val dao = MotDAO(DatabaseHelper(this))
-            var motfr = francaisAjout.text.toString()
-            var moten = francaisAjout.text.toString()
-            var diff = spinnerAjout.selectedItem.toString()
+            var motfr = francaisAjout.text.toString().lowercase()
+            var moten = francaisAjout.text.toString().lowercase()
+            var diff = spinnerAjout.selectedItem.toString().lowercase()
             dao.insertMot(motfr,moten,diff)
             onResume()
         }

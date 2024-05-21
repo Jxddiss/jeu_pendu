@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     * l'utilisateur, ainsi que la liste de mot spécifique à ces paramétre.
     * */
     companion object {
-        var choixLangue: String = "fr"
+        var choixLangue: String = "français"
         var choixDifficulte: String = "facile"
         var listeDeMot: ArrayList<String> = ArrayList()
     }

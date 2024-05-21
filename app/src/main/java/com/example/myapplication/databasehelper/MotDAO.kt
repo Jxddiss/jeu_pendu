@@ -1,6 +1,7 @@
 package com.example.myapplication.databasehelper
 
 import android.content.ContentValues
+import com.example.myapplication.R
 import com.example.myapplication.model.Mot
 
 class MotDAO(private val helper: DatabaseHelper) {
@@ -30,6 +31,49 @@ class MotDAO(private val helper: DatabaseHelper) {
 
             val mot = Mot(motFrancais,motAnglais,difficulte,id)
             motList.add(mot)
+        }
+        cursor.close()
+        db.close()
+        return motList
+    }
+
+    fun getAllMotStringByLange(langue : String, difficulte : String):List<String>{
+        val motList = mutableListOf<String>()
+        val db = helper.readableDatabase
+        val query = "SELECT * FROM ${DatabaseHelper.TABLE_NAME} WHERE ${DatabaseHelper.COLUMN_DIFFICULTE} = ? " +
+                "OR ${DatabaseHelper.COLUMN_DIFFICULTE} = ?"
+        var tradDifficulte = ""
+
+        when(difficulte){
+            "facile" -> tradDifficulte = "easy"
+            "normal" -> tradDifficulte = "normal"
+            "difficile" -> tradDifficulte = "difficult"
+            "easy" -> tradDifficulte = "facile"
+            "difficult" -> tradDifficulte = "difficile"
+        }
+        val cursor = db.rawQuery(query, arrayOf(difficulte,tradDifficulte))
+
+        while (cursor.moveToNext()){
+            when(langue){
+                "français" -> {
+                    val motFrancais = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_MOT_FRANCAIS))
+                    motList.add(motFrancais)
+                }
+                "anglais" -> {
+                    val motAnglais = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_MOT_ANGLAIS))
+                    motList.add(motAnglais)
+                }
+                "french" -> {
+                    val motFrancais = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_MOT_FRANCAIS))
+                    motList.add(motFrancais)
+                }
+                "english" -> {
+                    val motAnglais = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_MOT_ANGLAIS))
+                    motList.add(motAnglais)
+                }
+            }
+
+
         }
         cursor.close()
         db.close()

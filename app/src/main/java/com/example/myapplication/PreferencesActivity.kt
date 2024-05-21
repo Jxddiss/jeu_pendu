@@ -46,7 +46,7 @@ class PreferencesActivity : AppCompatActivity() {
             "normal" -> radioGroupDifficulter.check(R.id.btnDifficulterNormal)
             "difficile" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
             "easy" -> radioGroupDifficulter.check(R.id.btnDifficulterFacile)
-            "difficult" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
+            "hard" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
         }
 
         /*
@@ -118,7 +118,5 @@ class PreferencesActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-
-
     }
 }

@@ -44,14 +44,14 @@ class MotDAO(private val helper: DatabaseHelper) {
                 "OR ${DatabaseHelper.COLUMN_DIFFICULTE} = ?"
         var tradDifficulte = ""
 
-        when(difficulte){
+        when(difficulte.lowercase()){
             "facile" -> tradDifficulte = "easy"
             "normal" -> tradDifficulte = "normal"
-            "difficile" -> tradDifficulte = "difficult"
+            "difficile" -> tradDifficulte = "hard"
             "easy" -> tradDifficulte = "facile"
-            "difficult" -> tradDifficulte = "difficile"
+            "hard" -> tradDifficulte = "difficile"
         }
-        val cursor = db.rawQuery(query, arrayOf(difficulte,tradDifficulte))
+        val cursor = db.rawQuery(query, arrayOf(difficulte.lowercase(),tradDifficulte))
 
         while (cursor.moveToNext()){
             when(langue.lowercase()){

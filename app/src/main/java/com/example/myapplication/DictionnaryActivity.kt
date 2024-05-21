@@ -25,23 +25,15 @@ class DictionnaryActivity : AppCompatActivity() {
     lateinit var recycler : RecyclerView
 
     lateinit var btnAjouter : Button
-    lateinit var btnRetirer : Button
     lateinit var radioGroup: RadioGroup
     lateinit var spinnerRecherche : Spinner
     lateinit var spinnerAjout : Spinner
     lateinit var francaisAjout : EditText
     lateinit var anglaisAjout : EditText
 
-
-
     lateinit var adapter : RecyclerAdapter
     lateinit var motDAO : MotDAO
-    val ADD_CODE = 300
 
-
-
-
-    @SuppressLint("MissingInflatedId", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dictionnary)
@@ -61,7 +53,6 @@ class DictionnaryActivity : AppCompatActivity() {
         francaisAjout = findViewById(R.id.nouveauMotFrancais)
         anglaisAjout = findViewById(R.id.nouveauMotAnglais)
 
-
         val helper = DatabaseHelper(this)
         motDAO = MotDAO(helper)
 
@@ -72,33 +63,32 @@ class DictionnaryActivity : AppCompatActivity() {
             "français" -> {
                 radioGroup.check(R.id.boutonFrancais)
                 setInfoAdapter(true)
-                adapter.notifyDataSetChanged()
             }
             "anglais" -> {
                 radioGroup.check(R.id.boutonAnglais)
                 setInfoAdapter(false)
-                adapter.notifyDataSetChanged()
             }
             "french" -> {
                 radioGroup.check(R.id.boutonFrancais)
                 setInfoAdapter(true)
-                adapter.notifyDataSetChanged()
             }
             "english" -> {
                 radioGroup.check(R.id.boutonAnglais)
                 setInfoAdapter(false)
-                adapter.notifyDataSetChanged()
             }
         }
-        radioGroup.setOnCheckedChangeListener { group, checkedId ->
 
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId) {
                 R.id.boutonAnglais -> setInfoAdapter(false)
                 R.id.boutonFrancais -> setInfoAdapter(true)
             }
         }
 
-
+        /*
+        * Ajout d'un event listenner qui va appeler la méthode updateDif selon
+        * la difficulter selectionner dans le spinner
+        * */
         spinnerRecherche.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -117,7 +107,6 @@ class DictionnaryActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-
         //Ajout d'un mot dans la base de données
         btnAjouter.setOnClickListener {
 
@@ -131,13 +120,38 @@ class DictionnaryActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * change le display du recycler view selon la difficulté
+     * sélectionnée
+     *
+     * @param difficulte Difficulté choisi
+     * */
     fun updateDif(difficulte : String){
+        var tradDifficulte = ""
+
+        when(difficulte.lowercase()){
+            "facile" -> tradDifficulte = "easy"
+            "normal" -> tradDifficulte = "normal"
+            "difficile" -> tradDifficulte = "hard"
+            "easy" -> tradDifficulte = "facile"
+            "hard" -> tradDifficulte = "difficile"
+        }
+
         println(motList)
-        motListDisplayed = motList.filter { mot -> mot.difficulte == difficulte.lowercase() } as ArrayList
+        motListDisplayed = motList
+            .filter { mot -> mot.difficulte == difficulte.lowercase()
+                    || mot.difficulte == tradDifficulte } as ArrayList
+
         println(motListDisplayed)
         setInfoAdapter(radioGroup.checkedRadioButtonId == R.id.boutonFrancais)
     }
 
+    /**
+     * Affiche les mots de la base de données selon la langue choisi
+     *
+     * @param francais indique si la langue choisi est français et la liste est mise
+     * à jour si c'est le cas
+     * */
     fun setInfoAdapter(francais : Boolean){
         adapter = RecyclerAdapter(this,motListDisplayed,francais)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
@@ -145,16 +159,14 @@ class DictionnaryActivity : AppCompatActivity() {
         recycler.layoutManager = layoutManager
         recycler.itemAnimator = DefaultItemAnimator()
         recycler.adapter = adapter
-
     }
-
-
 
     override fun onResume() {
         super.onResume()
 
         motList.clear()
         motList.addAll(motDAO.getAllMot())
+        motListDisplayed.addAll(motList)
         adapter.notifyDataSetChanged()
     }
 }

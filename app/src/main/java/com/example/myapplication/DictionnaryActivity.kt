@@ -59,7 +59,7 @@ class DictionnaryActivity : AppCompatActivity() {
         motList = motDAO.getAllMot() as ArrayList<Mot>
         motListDisplayed.addAll(motList)
 
-        when (choixLangue.lowercase()) {
+        when (choixLangue) {
             "français" -> {
                 radioGroup.check(R.id.boutonFrancais)
                 setInfoAdapter(true)
@@ -129,7 +129,7 @@ class DictionnaryActivity : AppCompatActivity() {
     fun updateDif(difficulte : String){
         var tradDifficulte = ""
 
-        when(difficulte.lowercase()){
+        when(difficulte){
             "facile" -> tradDifficulte = "easy"
             "normal" -> tradDifficulte = "normal"
             "difficile" -> tradDifficulte = "hard"
@@ -139,7 +139,7 @@ class DictionnaryActivity : AppCompatActivity() {
 
         println(motList)
         motListDisplayed = motList
-            .filter { mot -> mot.difficulte == difficulte.lowercase()
+            .filter { mot -> mot.difficulte == difficulte
                     || mot.difficulte == tradDifficulte } as ArrayList
 
         println(motListDisplayed)

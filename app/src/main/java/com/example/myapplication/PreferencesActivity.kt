@@ -60,10 +60,10 @@ class PreferencesActivity : AppCompatActivity() {
 
             when (checkedId) {
                 R.id.btnLangueFrancais -> {
-                    choixLangue = choixLangueSelectionner
+                    choixLangue = choixLangueSelectionner.lowercase()
                 }
                 R.id.btnLangueAnglais  -> {
-                    choixLangue = choixLangueSelectionner
+                    choixLangue = choixLangueSelectionner.lowercase()
                 }
             }
         }
@@ -79,13 +79,13 @@ class PreferencesActivity : AppCompatActivity() {
 
             when (checkedId) {
                 R.id.btnDifficulterFacile    -> {
-                    choixDifficulte = choixDifficulterSelectionner
+                    choixDifficulte = choixDifficulterSelectionner.lowercase()
                 }
                 R.id.btnDifficulterNormal    -> {
-                    choixDifficulte = choixDifficulterSelectionner
+                    choixDifficulte = choixDifficulterSelectionner.lowercase()
                 }
                 R.id.btnDifficulterDifficile -> {
-                    choixDifficulte = choixDifficulterSelectionner
+                    choixDifficulte = choixDifficulterSelectionner.lowercase()
                 }
             }
 

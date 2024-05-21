@@ -50,6 +50,11 @@
     <string name="difficile">Difficile</string>
     <string name="Retirer">Retirer</string>
     <string name="title_activity_dictionnaire">DictionnaireActivity</string>
+    <string name="nouveau_mot">Nouveau mot</string>
+    <string name="mot_francais">Mot français :</string>
+    <string name="mot_anglais">Mot anglais :</string>
+    <string name="une_difficulte">Difficulté</string>
+    <string name="Ajouter">Ajouter</string>
 
 
 </resources>

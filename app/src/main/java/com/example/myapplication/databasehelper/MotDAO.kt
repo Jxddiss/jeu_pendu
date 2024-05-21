@@ -1,18 +1,17 @@
-package com.example.demorecycleviewgroupe1
+package com.example.myapplication.databasehelper
 
 import android.content.ContentValues
-import com.example.myapplication.databasehelper.DatabaseHelper
 import com.example.myapplication.model.Mot
 
 class MotDAO(private val helper: DatabaseHelper) {
 
-    fun insertMot(mot : Mot){
+    fun insertMot(motFr : String, motEn : String, dif : String){
         val db = helper.writableDatabase
         val values = ContentValues().apply {
-            put(DatabaseHelper.COLUMN_ID,mot.id)
-            put(DatabaseHelper.COLUMN_MOT_FRANCAIS,mot.motFrancais)
-            put(DatabaseHelper.COLUMN_MOT_ANGLAIS, mot.motAnglais)
-            put(DatabaseHelper.COLUMN_DIFFICULTE,mot.difficulte)
+
+            put(DatabaseHelper.COLUMN_MOT_FRANCAIS,motFr)
+            put(DatabaseHelper.COLUMN_MOT_ANGLAIS, motEn)
+            put(DatabaseHelper.COLUMN_DIFFICULTE,dif)
         }
         db.insert(DatabaseHelper.TABLE_NAME,null,values)
         db.close()

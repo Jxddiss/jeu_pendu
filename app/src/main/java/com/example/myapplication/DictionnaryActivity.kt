@@ -1,25 +1,20 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Button
-import android.widget.RadioButton
+import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.demorecycleviewgroupe1.MotDAO
+import com.example.myapplication.MainActivity.Companion.choixLangue
 import com.example.myapplication.databasehelper.DatabaseHelper
+import com.example.myapplication.databasehelper.MotDAO
 import com.example.myapplication.model.Mot
 import com.example.myapplication.recycleradapter.RecyclerAdapter
 
@@ -30,7 +25,13 @@ class DictionnaryActivity : AppCompatActivity() {
     lateinit var btnAjouter : Button
     lateinit var btnRetirer : Button
     lateinit var radioGroup: RadioGroup
-    lateinit var spinner : Spinner
+    lateinit var spinnerRecherche : Spinner
+    lateinit var spinnerAjout : Spinner
+    lateinit var francaisAjout : EditText
+    lateinit var anglaisAjout : EditText
+
+
+
     lateinit var adapter : RecyclerAdapter
     lateinit var motDAO : MotDAO
     val ADD_CODE = 300
@@ -38,38 +39,59 @@ class DictionnaryActivity : AppCompatActivity() {
 
 
 
+    @SuppressLint("MissingInflatedId", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_dictionnary)
 
-        spinner = findViewById(R.id.menu)
+        //premier spinner (menu déroulant) pour filtrer la base de données
+        spinnerRecherche = findViewById(R.id.menu)
+
         recycler = findViewById(R.id.recycler)
         radioGroup = findViewById(R.id.choixLangue)
         motList = ArrayList()
-        btnRetirer = findViewById(R.id.boutonRetirer)
+        btnAjouter = findViewById(R.id.boutonAjouter)
+
+        //deuxième spinner (menu déroulant) pour choisir la difficulté du mot ajouté
+        spinnerAjout = findViewById(R.id.menuAjout)
+
+        francaisAjout = findViewById(R.id.nouveauMotFrancais)
+        anglaisAjout = findViewById(R.id.nouveauMotAnglais)
+
 
         val helper = DatabaseHelper(this)
         motDAO = MotDAO(helper)
 
         motList = motDAO.getAllMot() as ArrayList<Mot>
 
-        setInfoAdapter()
+        setInfoAdapter(true)
+        when (choixLangue.lowercase()) {
+            "français" -> {radioGroup.check(R.id.boutonFrancais)
+            setInfoAdapter(true)}
+            "anglais" -> {radioGroup.check(R.id.boutonAnglais)
+                setInfoAdapter(false)}
+            "french" -> {radioGroup.check(R.id.boutonFrancais)
+                setInfoAdapter(true)}
+            "english" -> {radioGroup.check(R.id.boutonAnglais)
+                setInfoAdapter(false)}
+        }
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
 
             when (checkedId) {
-                R.id.boutonAnglais -> updateFrancais()
-                R.id.boutonFrancais -> updateAnglais()
+                R.id.boutonAnglais -> setInfoAdapter(true)
+                R.id.boutonFrancais -> setInfoAdapter(false)
             }
         }
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+        spinnerRecherche.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
                 id: Long
             ) {
-
+                //Switch case pour le choix de la difficulté
                 when (position) {
                     0 -> updateDif("Facile")
                     1 -> updateDif("Normal")
@@ -79,35 +101,31 @@ class DictionnaryActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                set
+
 
             }
-
-            private fun getDataForMode(mode: String): List<String> {
-                // Replace this with your actual data retrieval logic
-                val data = mutableListOf<String>()
-                // Example: Retrieve data based on the selected mode
-                when (mode) {
-                    "Mode 1" -> {
-                        data.add("Item A1")
-                        data.add("Item A2")
-                    }
-
-                    "Mode 2" -> {
-                        data.add("Item B1")
-                        data.add("Item B2")
-                    }
-                    // Add more cases as needed for different modes
-                }
-                return data
-            }
-
         }
+
+
+        //Ajout d'un mot dans la base de données
+        btnAjouter.setOnClickListener {
+
+            val dao = MotDAO(DatabaseHelper(this))
+            var motfr = francaisAjout.text.toString()
+            var moten = francaisAjout.text.toString()
+            var diff = spinnerAjout.selectedItem.toString()
+            dao.insertMot(motfr,moten,diff)
+            onResume()
+        }
+
     }
 
+    fun updateDif(string : String){
+        
+    }
 
-    fun setInfoAdapter(){
-        adapter = RecyclerAdapter(motList)
+    fun setInfoAdapter(francais : Boolean){
+        adapter = RecyclerAdapter(this,motList,francais)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
 
         recycler.layoutManager = layoutManager

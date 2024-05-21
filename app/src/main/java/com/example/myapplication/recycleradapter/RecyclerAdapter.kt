@@ -1,38 +1,36 @@
 package com.example.myapplication.recycleradapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.databasehelper.DatabaseHelper
+import com.example.myapplication.databasehelper.MotDAO
 import com.example.myapplication.model.Mot
 
+class RecyclerAdapter(
+    private val context: Context,
+    private var motList: ArrayList<Mot>,
+    private var francais: Boolean
+) : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
 
-class RecyclerAdapter(var motList:ArrayList<Mot>):
-    RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>()
-{
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    private val databaseHelper = DatabaseHelper(context)
+    private val motDAO = MotDAO(databaseHelper)
 
-        var lettresText : TextView
-        var langueText : TextView
-        var difficulteText : TextView
-
-        init {
-
-            lettresText = itemView.findViewById(R.id.lettres)
-            langueText = itemView.findViewById(R.id.langue)
-            difficulteText = itemView.findViewById(R.id.difficulte)
-        }
-
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var motText: TextView = itemView.findViewById(R.id.mot)
+        var difficulteText: TextView = itemView.findViewById(R.id.difficulte)
+        var btnRetirer: Button = itemView.findViewById(R.id.boutonRetirer)
     }
 
     var onItemClick: ((Mot) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        var itemView : View = LayoutInflater.from(parent.context).inflate(R.layout.mot,parent,false)
-
+        val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.mot, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -41,18 +39,22 @@ class RecyclerAdapter(var motList:ArrayList<Mot>):
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        var let : String = motList[position].lettres
-        var lang : String = motList[position].langue
-        var dif : String = motList[position].difficulte
+        val mot = motList[position]
 
-        holder.lettresText.text = let
-        holder.langueText.text = lang
-        holder.difficulteText.text = dif
+        if (francais) {
+            holder.motText.text = mot.motFrancais
+        } else {
+            holder.motText.text = mot.motAnglais
+        }
 
+        holder.difficulteText.text = mot.difficulte
 
-        holder.itemView.setOnClickListener {
-            onItemClick?.invoke(motList[position])
+        holder.btnRetirer.setOnClickListener {
+            // Implement removal logic here
+            motDAO.deleteMot(mot.id.toString())
+            motList.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, motList.size)
         }
     }
-
 }

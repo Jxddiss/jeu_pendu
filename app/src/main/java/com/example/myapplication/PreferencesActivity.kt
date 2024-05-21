@@ -114,5 +114,18 @@ class PreferencesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btnDictionnaire.setOnClickListener {
+            val intent = Intent(this, DictionnaryActivity::class.java)
+
+            val bundle = Bundle().apply {
+                putString("choixLangue", choixLangue)
+
+            }
+            intent.putExtras(bundle)
+
+            startActivity(intent)
+        }
+
+
     }
 }

@@ -17,9 +17,11 @@ import com.example.myapplication.databasehelper.DatabaseHelper
 import com.example.myapplication.databasehelper.MotDAO
 import com.example.myapplication.model.Mot
 import com.example.myapplication.recycleradapter.RecyclerAdapter
+import java.util.stream.Collectors
 
 class DictionnaryActivity : AppCompatActivity() {
     lateinit var motList : ArrayList<Mot>
+    lateinit var motListDisplayed : ArrayList<Mot>
     lateinit var recycler : RecyclerView
 
     lateinit var btnAjouter : Button
@@ -50,6 +52,7 @@ class DictionnaryActivity : AppCompatActivity() {
         recycler = findViewById(R.id.recycler)
         radioGroup = findViewById(R.id.choixLangue)
         motList = ArrayList()
+        motListDisplayed = ArrayList()
         btnAjouter = findViewById(R.id.boutonAjouter)
 
         //deuxième spinner (menu déroulant) pour choisir la difficulté du mot ajouté
@@ -63,6 +66,7 @@ class DictionnaryActivity : AppCompatActivity() {
         motDAO = MotDAO(helper)
 
         motList = motDAO.getAllMot() as ArrayList<Mot>
+        motListDisplayed.addAll(motList)
 
         when (choixLangue.lowercase()) {
             "français" -> {
@@ -104,16 +108,13 @@ class DictionnaryActivity : AppCompatActivity() {
             ) {
                 //Switch case pour le choix de la difficulté
                 when (position) {
-                    0 -> updateDif("Facile")
-                    1 -> updateDif("Normal")
-                    2 -> updateDif("Difficile")
+                    0 -> updateDif("facile")
+                    1 -> updateDif("normal")
+                    2 -> updateDif("difficile")
                 }
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-
-            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
 
@@ -130,12 +131,15 @@ class DictionnaryActivity : AppCompatActivity() {
 
     }
 
-    fun updateDif(string : String){
-        
+    fun updateDif(difficulte : String){
+        println(motList)
+        motListDisplayed = motList.filter { mot -> mot.difficulte == difficulte.lowercase() } as ArrayList
+        println(motListDisplayed)
+        setInfoAdapter(radioGroup.checkedRadioButtonId == R.id.boutonFrancais)
     }
 
     fun setInfoAdapter(francais : Boolean){
-        adapter = RecyclerAdapter(this,motList,francais)
+        adapter = RecyclerAdapter(this,motListDisplayed,francais)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
 
         recycler.layoutManager = layoutManager

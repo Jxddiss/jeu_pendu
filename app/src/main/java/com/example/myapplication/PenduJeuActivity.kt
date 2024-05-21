@@ -23,10 +23,13 @@ class PenduJeuActivity : AppCompatActivity() {
     lateinit var letterPlaceholder: LinearLayout
     lateinit var btnRecommencer: Button
     lateinit var jeu: Jeu
+    var debutGame : Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
+
+        debutGame = System.currentTimeMillis()
 
         btnRecommencer = findViewById(R.id.btnRestartJeu)
 

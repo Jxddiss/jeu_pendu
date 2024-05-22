@@ -156,7 +156,7 @@
             android:layout_margin="5sp"
             android:backgroundTint="#322F2F"
             android:fontFamily="@font/caveat"
-            android:text="@string/page_preference_bouton_dictionnaire"
+            android:text="@string/dictionnaire"
             android:textColorHighlight="#BA1A1A"
             android:textColorHint="#CA1B1B"
             android:textColorLink="#875959"

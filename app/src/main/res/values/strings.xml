@@ -5,14 +5,9 @@
     <string name="jeu_du_pendu">Jeu du pendu!</string>
     <string name="historique">Historique</string>
     <string name="choix_language">Choisissez votre langue:</string>
-    <string name="choix_languageFr">Français</string>
-    <string name="choix_languageEn">Anglais</string>
-    <string name="choix_niveau_difficulté">Niveau de difficulté:</string>
-    <string name="choix_niveau_difficulté_facile">Facile</string>
-    <string name="choix_niveau_difficulté_normal">Normal</string>
-    <string name="choix_niveau_difficulté_difficile">Difficile</string>
-    <string name="page_preference_bouton_accueil">Accueil</string>
-    <string name="page_preference_bouton_dictionnaire">Dictionnaire</string>
+    <string name="dictionnaire">Dictionnaire</string>
+    <string name="anglais">Anglais</string>
+    <string name="francais">Français</string>
     <string name="lettre_a" translatable="false">A</string>
     <string name="lettre_b" translatable="false">B</string>
     <string name="lettre_c" translatable="false">C</string>
@@ -39,7 +34,27 @@
     <string name="lettre_x" translatable="false">X</string>
     <string name="lettre_y" translatable="false">Y</string>
     <string name="lettre_z" translatable="false">Z</string>
+    <string name="choix_languageFr">Français</string>
+    <string name="choix_languageEn">Anglais</string>
+    <string name="choix_niveau_difficulté">Chisissez votre difficulté:</string>
+    <string name="choix_niveau_difficulté_facile">Facile</string>
+    <string name="choix_niveau_difficulté_normal">Normal</string>
+    <string name="choix_niveau_difficulté_difficile">Difficile</string>
+    <string name="page_preference_bouton_accueil">Page d\'accueil</string>
+
     <string name="recommencer">Recommencer</string>
     <string name="message_game_over">Vous avez perdu</string>
     <string name="menu">Menu</string>
+    <string name="facile">Facile</string>
+    <string name="normal">Normal</string>
+    <string name="difficile">Difficile</string>
+    <string name="Retirer">Retirer</string>
+    <string name="title_activity_dictionnaire" translatable="false">DictionnaireActivity</string>
+    <string name="nouveau_mot">Nouveau mot</string>
+    <string name="mot_francais">Mot français :</string>
+    <string name="mot_anglais">Mot anglais :</string>
+    <string name="une_difficulte">Difficulté</string>
+    <string name="Ajouter">Ajouter</string>
+
+
 </resources>

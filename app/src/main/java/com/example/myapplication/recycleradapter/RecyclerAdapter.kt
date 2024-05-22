@@ -50,7 +50,6 @@ class RecyclerAdapter(
         holder.difficulteText.text = mot.difficulte
 
         holder.btnRetirer.setOnClickListener {
-            // Implement removal logic here
             motDAO.deleteMot(mot.id.toString())
             motList.removeAt(position)
             notifyItemRemoved(position)

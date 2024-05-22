@@ -40,9 +40,6 @@ class PenduJeuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pendu_jeu)
 
         listeMotString = motDAO.getAllMotStringByLangue(choixLangue, choixDifficulte) as ArrayList
-        if(listeMotString.isEmpty()){
-            listeMotString = mutableListOf("Allo","test") as ArrayList
-        }
 
         debutGame = System.currentTimeMillis()
 

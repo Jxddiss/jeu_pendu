@@ -55,6 +55,10 @@
     <string name="mot_anglais">Mot anglais :</string>
     <string name="une_difficulte">Difficulté</string>
     <string name="Ajouter">Ajouter</string>
+    <string name="reussi">Réussi ?</string>
+    <string name="mot">Mot :</string>
+    <string name="difficultePartie">Difficulté :</string>
+    <string name="temp">Temp :</string>
 
 
 </resources>

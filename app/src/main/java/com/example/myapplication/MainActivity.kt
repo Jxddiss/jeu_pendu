@@ -12,6 +12,7 @@ import com.example.myapplication.model.Mot
 class MainActivity : AppCompatActivity() {
     lateinit var btnStart: Button
     lateinit var btnPreference: Button
+    lateinit var btnHistorique : Button
     var databaseHelper = DatabaseHelper(this)
     var motDAO = MotDAO(databaseHelper)
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         btnStart = findViewById(R.id.btnJeu)
         btnPreference = findViewById(R.id.btnPreference)
+        btnHistorique = findViewById(R.id.btnHistorique)
 
         // == Vérification si la base de données est vide et on la remplie si jamais
         val listeMotString = motDAO.getAllMot() as ArrayList
@@ -62,6 +64,11 @@ class MainActivity : AppCompatActivity() {
             intentPreference.putExtras(bundle)
 
             startActivity(intentPreference)
+        }
+
+        btnHistorique.setOnClickListener {
+            val intent = Intent(this,HistoriqueActivity::class.java)
+            startActivity(intent)
         }
     }
 }

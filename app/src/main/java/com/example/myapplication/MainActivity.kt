@@ -5,19 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.myapplication.databasehelper.DatabaseHelper
+import com.example.myapplication.databasehelper.MotDAO
+import com.example.myapplication.model.Mot
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnStart: Button
     lateinit var btnPreference: Button
+    var databaseHelper = DatabaseHelper(this)
+    var motDAO = MotDAO(databaseHelper)
 
     /*
     * Companion object qui contient le choix de langue et le niveau de difficulter choisie par
     * l'utilisateur, ainsi que la liste de mot spécifique à ces paramétre.
     * */
     companion object {
-        var choixLangue: String = ""
-        var choixDifficulte: String = ""
-        var listeDeMot: ArrayList<String> = ArrayList()
+        var choixLangue: String = "français"
+        var choixDifficulte: String = "facile"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
         btnStart = findViewById(R.id.btnJeu)
         btnPreference = findViewById(R.id.btnPreference)
+
+        // == Vérification si la base de données est vide et on la remplie si jamais
+        val listeMotString = motDAO.getAllMot() as ArrayList
+        if(listeMotString.isEmpty()){
+            motDAO.insertMot("allo","hi","easy")
+            motDAO.insertMot("test","test","easy")
+        }
 
         val extras = intent.extras
         if (extras != null) {

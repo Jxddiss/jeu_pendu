@@ -17,7 +17,7 @@
     <string name="choix_niveau_difficulté">Choose your difficulty:</string>
     <string name="choix_niveau_difficulté_facile">Easy</string>
     <string name="choix_niveau_difficulté_normal">Normal</string>
-    <string name="choix_niveau_difficulté_difficile">Difficult</string>
+    <string name="choix_niveau_difficulté_difficile">Hard</string>
     <string name="page_preference_bouton_accueil">Home page</string>
 
     <string name="recommencer">Retry</string>

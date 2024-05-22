@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.MainActivity.Companion.choixDifficulte
+import com.example.myapplication.MainActivity.Companion.choixLangue
 
 /**
  * La class préférence permet à l'utilisateur de définir la langue voulu
@@ -20,15 +22,6 @@ class PreferencesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preferences)
 
-        /*
-         *  Extraction des attributs du bundle parvenant de la page accueil afin
-         *  de précharger l'état actuelle de la langue choisie et le niveau
-         *  de langue.
-         *  */
-        val bundle = intent.extras
-        var choixLangue = bundle?.getString("choixLangue")
-        var choixDifficulte = bundle?.getString("choixDifficulte")
-
         btnRetourAccueil = findViewById(R.id.btnRetourAccueil)
         btnDictionnaire = findViewById(R.id.btnDictionnaire)
 
@@ -38,7 +31,7 @@ class PreferencesActivity : AppCompatActivity() {
         /*
          * Lis la variable choixLangue et coche la bonne case sur l'écran
          * */
-        when (choixLangue?.lowercase()) {
+        when (choixLangue.lowercase()) {
             "français" -> radioGroupLangue.check(R.id.btnLangueFrancais)
             "anglais" -> radioGroupLangue.check(R.id.btnLangueAnglais)
             "french" -> radioGroupLangue.check(R.id.btnLangueFrancais)
@@ -48,12 +41,12 @@ class PreferencesActivity : AppCompatActivity() {
         /*
          * Lis la variable choixDifficulter et coche la bonne case sur l'écran
          * */
-        when (choixDifficulte?.lowercase()) {
+        when (choixDifficulte.lowercase()) {
             "facile" -> radioGroupDifficulter.check(R.id.btnDifficulterFacile)
             "normal" -> radioGroupDifficulter.check(R.id.btnDifficulterNormal)
             "difficile" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
             "easy" -> radioGroupDifficulter.check(R.id.btnDifficulterFacile)
-            "difficult" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
+            "hard" -> radioGroupDifficulter.check(R.id.btnDifficulterDifficile)
         }
 
         /*
@@ -67,10 +60,10 @@ class PreferencesActivity : AppCompatActivity() {
 
             when (checkedId) {
                 R.id.btnLangueFrancais -> {
-                    choixLangue = choixLangueSelectionner
+                    choixLangue = choixLangueSelectionner.lowercase()
                 }
                 R.id.btnLangueAnglais  -> {
-                    choixLangue = choixLangueSelectionner
+                    choixLangue = choixLangueSelectionner.lowercase()
                 }
             }
         }
@@ -86,13 +79,13 @@ class PreferencesActivity : AppCompatActivity() {
 
             when (checkedId) {
                 R.id.btnDifficulterFacile    -> {
-                    choixDifficulte = choixDifficulterSelectionner
+                    choixDifficulte = choixDifficulterSelectionner.lowercase()
                 }
                 R.id.btnDifficulterNormal    -> {
-                    choixDifficulte = choixDifficulterSelectionner
+                    choixDifficulte = choixDifficulterSelectionner.lowercase()
                 }
                 R.id.btnDifficulterDifficile -> {
-                    choixDifficulte = choixDifficulterSelectionner
+                    choixDifficulte = choixDifficulterSelectionner.lowercase()
                 }
             }
 
@@ -125,7 +118,5 @@ class PreferencesActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-
-
     }
 }

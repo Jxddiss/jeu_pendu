@@ -14,6 +14,10 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.view.get
 import com.bumptech.glide.Glide
+import com.example.myapplication.MainActivity.Companion.choixDifficulte
+import com.example.myapplication.MainActivity.Companion.choixLangue
+import com.example.myapplication.databasehelper.DatabaseHelper
+import com.example.myapplication.databasehelper.MotDAO
 import com.example.myapplication.model.Jeu
 
 private const val NB_ERREURS_MAX = 6
@@ -23,10 +27,18 @@ class PenduJeuActivity : AppCompatActivity() {
     lateinit var letterPlaceholder: LinearLayout
     lateinit var btnRecommencer: Button
     lateinit var jeu: Jeu
+    lateinit var listeMotString : ArrayList<String>
+    val databaseHelper = DatabaseHelper(this)
+    val motDAO = MotDAO(databaseHelper)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
+
+        listeMotString = motDAO.getAllMotStringByLangue(choixLangue, choixDifficulte) as ArrayList
+        if(listeMotString.isEmpty()){
+            listeMotString = mutableListOf("Allo","test") as ArrayList
+        }
 
         btnRecommencer = findViewById(R.id.btnRestartJeu)
 
@@ -36,7 +48,7 @@ class PenduJeuActivity : AppCompatActivity() {
             this.recreate()
         }
 
-        jeu = Jeu(mutableListOf("journee","biscuit", "orange", "pomme","bananne") as ArrayList)
+        jeu = Jeu(listeMotString)
         gifImageView = findViewById(R.id.animGifImageView)
         letterPlaceholder = findViewById(R.id.linearLayLettresMot)
         initialiserLetterPlaceHolder()

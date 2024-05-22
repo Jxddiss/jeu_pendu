@@ -35,4 +35,5 @@
     <string name="temp">"Time : "</string>
     <string name="mot_ajoute">Word added!</string>
     <string name="champ_vide">Empty inputs!</string>
+    <string name="message_gagne">You won!</string>
 </resources>

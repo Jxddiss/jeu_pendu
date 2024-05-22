@@ -36,8 +36,10 @@ class MainActivity : AppCompatActivity() {
         // == Vérification si la base de données est vide et on la remplie si jamais
         val listeMotString = motDAO.getAllMot() as ArrayList
         if(listeMotString.isEmpty()){
-            motDAO.insertMot("allo","hi","easy")
+            motDAO.insertMot("bonjour","hi","easy")
             motDAO.insertMot("test","test","easy")
+            motDAO.insertMot("histoire","history","normal")
+            motDAO.insertMot("salopette","overall","hard")
         }
 
         val extras = intent.extras

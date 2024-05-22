@@ -95,11 +95,12 @@ class PenduJeuActivity : AppCompatActivity() {
 
         if (jeu.estRéussi()){
             btn.postDelayed({
-                val intent  = Intent(this, MainActivity::class.java)
+                val intent  = Intent(this, GameOverActivity::class.java)
                 val finGame = System.currentTimeMillis()
                 val temp = finGame - debutGame
                 val partieJouee = PartieJouee(jeu.motADeviner, choixDifficulte,temp,true)
                 partieJoueeDAO.insertPartie(partieJouee)
+                intent.putExtra("reussi",true)
                 startActivity(intent)
             },600)
         }else if(jeu.nbErreurs >= NB_ERREURS_MAX){
@@ -109,6 +110,7 @@ class PenduJeuActivity : AppCompatActivity() {
                 val temp = finGame - debutGame
                 val partieJouee = PartieJouee(jeu.motADeviner, choixDifficulte,temp,false)
                 partieJoueeDAO.insertPartie(partieJouee)
+                intent.putExtra("reussi",false)
                 startActivity(intent)
             },2700)
         }

@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.View
@@ -12,7 +11,6 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,11 +20,10 @@ import com.example.myapplication.databasehelper.DatabaseHelper
 import com.example.myapplication.databasehelper.MotDAO
 import com.example.myapplication.model.Mot
 import com.example.myapplication.recycleradapter.RecyclerAdapter
-import java.util.stream.Collectors
 
 class DictionnaryActivity : AppCompatActivity() {
-    lateinit var motList : ArrayList<Mot> // Liste de tout les mots de la base de donnée
-    lateinit var motListDisplayed : ArrayList<Mot> // Liste de mot utiliser pour afficher
+    lateinit var motList : ArrayList<Mot> // Liste de tous les mots de la base de données
+    lateinit var motListDisplayed : ArrayList<Mot> // Liste de mots utilisée pour afficher
     lateinit var recycler : RecyclerView
 
     lateinit var btnAjouter : Button
@@ -64,7 +61,7 @@ class DictionnaryActivity : AppCompatActivity() {
         motList = motDAO.getAllMot() as ArrayList<Mot>
         motListDisplayed.addAll(motList)
 
-        // Set le bouton selectionner selon le choix de langue
+        // Set le bouton selectionné selon le choix de langue
         when (choixLangue) {
             "français" -> {
                 radioGroup.check(R.id.boutonFrancais)
@@ -94,8 +91,8 @@ class DictionnaryActivity : AppCompatActivity() {
         setDiffRecherche(choixDifficulte)
 
         /*
-        * Ajout d'un event listenner qui va appeler la méthode updateDif selon
-        * la difficulter selectionner dans le spinner
+        * Ajout d'un event listener qui va appeler la méthode updateDif selon
+        * la difficulté selectionné dans le spinner
         *
         * source : https://stackoverflow.com/questions/46447296/android-kotlin-onitemselectedlistener-for-spinner-not-working
         * */
@@ -146,8 +143,8 @@ class DictionnaryActivity : AppCompatActivity() {
 
     /**
      * change le display du recycler view selon la difficulté
-     * sélectionnée en filtrant la liste de tout les mots selon la
-     * difficultée et en mettant à jour la liste displayed
+     * sélectionnée en filtrant la liste de tous les mots selon la
+     * difficulté et en mettant à jour la liste displayed
      *
      * @param difficulte Difficulté choisi
      * */
@@ -172,9 +169,9 @@ class DictionnaryActivity : AppCompatActivity() {
     }
 
     /**
-     * Affiche les mots de la base de données selon la langue choisi
+     * Affiche les mots de la base de données selon la langue choisie
      *
-     * @param francais indique si la langue choisi est français et la liste est mise
+     * @param francais indique si la langue choisie est français et la liste est mise
      * à jour si c'est le cas
      * */
     fun setInfoAdapter(francais : Boolean){
@@ -198,7 +195,7 @@ class DictionnaryActivity : AppCompatActivity() {
     }
 
     /**
-     * Pour fermer le clavier après avoir insérer un mot
+     * Pour fermer le clavier après avoir inséré un mot
      *
      * source : https://stackoverflow.com/questions/41790357/close-hide-the-android-soft-keyboard-with-kotlin
      * */
@@ -207,13 +204,4 @@ class DictionnaryActivity : AppCompatActivity() {
         inputManager.hideSoftInputFromWindow(windowToken, 0)
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        motList.clear()
-        motList.addAll(motDAO.getAllMot())
-        motListDisplayed.clear()
-        motListDisplayed.addAll(motList)
-        adapter.notifyDataSetChanged()
-    }
 }

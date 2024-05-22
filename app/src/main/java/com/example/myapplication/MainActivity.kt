@@ -1,13 +1,12 @@
 package com.example.myapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databasehelper.DatabaseHelper
 import com.example.myapplication.databasehelper.MotDAO
-import com.example.myapplication.model.Mot
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnStart: Button
@@ -17,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     var motDAO = MotDAO(databaseHelper)
 
     /*
-    * Companion object qui contient le choix de langue et le niveau de difficulter choisie par
-    * l'utilisateur, ainsi que la liste de mot spécifique à ces paramétre.
+    * Companion object qui contient le choix de langue et le niveau de difficulté choisi par
+    * l'utilisateur, ainsi que la liste des mots spécifiques à ces paramètres.
     * */
     companion object {
         var choixLangue: String = "français"
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         btnPreference = findViewById(R.id.btnPreference)
         btnHistorique = findViewById(R.id.btnHistorique)
 
-        // == Vérification si la base de données est vide et on la remplie si jamais
+        // == Vérification si la base de données est vide et on la remplit si c'est le cas
         val listeMotString = motDAO.getAllMot() as ArrayList
         if(listeMotString.isEmpty()){
             motDAO.insertMot("bonjour","hi","easy")

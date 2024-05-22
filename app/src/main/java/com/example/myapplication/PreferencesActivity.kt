@@ -10,10 +10,10 @@ import com.example.myapplication.MainActivity.Companion.choixDifficulte
 import com.example.myapplication.MainActivity.Companion.choixLangue
 
 /**
- * La class préférence permet à l'utilisateur de définir la langue voulu
+ * La class préférence permet à l'utilisateur de définir la langue voulue
  * et le niveau de difficulté. Lorsque l'utilisateur clique sur le bouton,
- * "btnRetourAccueil", l'information est sauvegardé a travers un companion object
- * et elle est renvoyé a la page accueil.
+ * "btnRetourAccueil", l'information est sauvegardée à travers un companion object
+ * et elle est renvoyée à la page accueil.
  * */
 class PreferencesActivity : AppCompatActivity() {
     lateinit var btnRetourAccueil: Button
@@ -29,7 +29,7 @@ class PreferencesActivity : AppCompatActivity() {
         val radioGroupDifficulter: RadioGroup = findViewById(R.id.btnDifficulter)
 
         /*
-         * Lis la variable choixLangue et coche la bonne case sur l'écran
+         * Lit la variable choixLangue et coche la bonne case sur l'écran
          * */
         when (choixLangue.lowercase()) {
             "français" -> radioGroupLangue.check(R.id.btnLangueFrancais)
@@ -39,7 +39,7 @@ class PreferencesActivity : AppCompatActivity() {
         }
 
         /*
-         * Lis la variable choixDifficulter et coche la bonne case sur l'écran
+         * Lit la variable choixDifficulte et coche la bonne case sur l'écran
          * */
         when (choixDifficulte.lowercase()) {
             "facile" -> radioGroupDifficulter.check(R.id.btnDifficulterFacile)
@@ -50,8 +50,8 @@ class PreferencesActivity : AppCompatActivity() {
         }
 
         /*
-         * Fonction qui définie un event listener sur le groupe de bouton radio du choix de langue
-         * et ensuite, vérifie lequel à été cliquer et l'assigne a la variable nécessaire.
+         * Fonction qui définit un event listener sur le groupe de bouton radio du choix de langue
+         * et ensuite, vérifie lequel à été cliqueé et l'assigne à la variable nécessaire.
          * */
         radioGroupLangue.setOnCheckedChangeListener { group, checkedId ->
 
@@ -69,8 +69,8 @@ class PreferencesActivity : AppCompatActivity() {
         }
 
         /*
-         * Fonction qui définie un event listener sur le groupe de bouton radio du choix de difficulté
-         * et ensuite, vérifie lequel à été cliquer et l'assigne a la variable nécessaire.
+         * Fonction qui définit un event listener sur le groupe de bouton radio du choix de difficulté
+         * et ensuite, vérifie lequel à été cliqué et l'assigne à la variable nécessaire.
          * */
         radioGroupDifficulter.setOnCheckedChangeListener { group, checkedId ->
 
@@ -92,7 +92,7 @@ class PreferencesActivity : AppCompatActivity() {
         }
 
         /*
-        * Un event listener sur le bouton retour à l'accueil qui créer une nouvelle bundle
+        * Un event listener sur le bouton retour à l'accueil qui crée une nouvelle bundle
         * et envoie les deux variables du choix de langue et de difficulté.
         * */
         btnRetourAccueil.setOnClickListener {

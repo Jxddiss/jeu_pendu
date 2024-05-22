@@ -6,13 +6,13 @@ import android.animation.ValueAnimator
 import android.content.Intent
 import android.graphics.Color
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import com.bumptech.glide.Glide
 import com.example.myapplication.MainActivity.Companion.choixDifficulte
@@ -194,8 +194,8 @@ class PenduJeuActivity : AppCompatActivity() {
     }
 
     /**
-     * Méthode qui permet d'initialiser le linear layout avec le nombre de charactère
-     * du mot a deviné
+     * Méthode qui permet d'initialiser le linear layout avec le nombre de charactères
+     * du mot a deviner
      *
      * Aide : https://stackoverflow.com/questions/5042197/android-set-height-and-width-of-custom-view-programmatically
      * */
@@ -213,10 +213,10 @@ class PenduJeuActivity : AppCompatActivity() {
     }
 
     /**
-     * Méthode qui se lance dans le cas ou une lettre se trouve bel et bien dans le mot
+     * Méthode qui se lance dans le cas où une lettre se trouve bel et bien dans le mot
      *
      * @param btn  ImageButton qui vient d'être cliqué
-     * @param resultPosition  ArrayList<Int> qui représente les position ou la lettre se
+     * @param resultPosition  ArrayList<Int> qui représente les positions où la lettre se
      * trouve dans le mot
      * */
     private fun handleBonChoix(btn : ImageButton, resultPosition : ArrayList<Int> ){

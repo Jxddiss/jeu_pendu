@@ -48,6 +48,8 @@
     <string name="facile">Facile</string>
     <string name="normal">Normal</string>
     <string name="difficile">Difficile</string>
+    <string name="easy">Facile</string>
+    <string name="hard">Difficile</string>
     <string name="Retirer">Retirer</string>
     <string name="title_activity_dictionnaire" translatable="false">DictionnaireActivity</string>
     <string name="nouveau_mot">Nouveau mot</string>

@@ -1,11 +1,13 @@
 package com.example.myapplication.recycleradapter
 
 import android.content.Context
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databasehelper.DatabaseHelper
@@ -15,7 +17,8 @@ import com.example.myapplication.model.Mot
 class RecyclerAdapter(
     private val context: Context,
     private var motList: ArrayList<Mot>,
-    private var francais: Boolean
+    private var francais: Boolean,
+    private val ressources: Resources
 ) : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
 
     private val databaseHelper = DatabaseHelper(context)
@@ -47,7 +50,10 @@ class RecyclerAdapter(
             holder.motText.text = mot.motAnglais
         }
 
-        holder.difficulteText.text = mot.difficulte
+        holder.difficulteText.text = ContextCompat.getString(
+            context,
+            ressources.getIdentifier(mot.difficulte, "string", context.packageName)
+        )
 
         holder.btnRetirer.setOnClickListener {
             motDAO.deleteMot(mot.id.toString())

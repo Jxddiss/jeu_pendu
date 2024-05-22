@@ -42,7 +42,7 @@ class HistoriqueActivity : AppCompatActivity() {
     }
 
     fun setInfoAdapter(){
-        adapter = RecyclerAdapterPartieJouer(this,partieList)
+        adapter = RecyclerAdapterPartieJouer(this,partieList,resources)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
 
         recyclerPartie.layoutManager = layoutManager

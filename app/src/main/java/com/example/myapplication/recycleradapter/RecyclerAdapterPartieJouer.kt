@@ -2,12 +2,14 @@ package com.example.myapplication.recycleradapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.getString
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.model.PartieJouee
@@ -15,7 +17,8 @@ import kotlin.time.DurationUnit
 import kotlin.time.toDuration
 
 class RecyclerAdapterPartieJouer(private val context: Context,
-                                 private var partieList: ArrayList<PartieJouee>
+                                 private var partieList: ArrayList<PartieJouee>,
+                                 private val ressources: Resources
 ) : RecyclerView.Adapter<RecyclerAdapterPartieJouer.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -45,7 +48,7 @@ class RecyclerAdapterPartieJouer(private val context: Context,
         holder.tempText.text = partie.temps
             .toDuration(DurationUnit.MILLISECONDS)
             .toString(DurationUnit.SECONDS,2)
-        holder.difficulteText.text = partie.difficulte
+        holder.difficulteText.text = getString(context,ressources.getIdentifier(partie.difficulte,"string",context.packageName))
         if (partie.reussite){
             holder.imgReussite.setBackgroundResource(R.drawable.success)
             holder.motText.setTextColor(Color.parseColor("#02b311"))

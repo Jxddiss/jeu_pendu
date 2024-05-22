@@ -178,7 +178,7 @@ class DictionnaryActivity : AppCompatActivity() {
      * à jour si c'est le cas
      * */
     fun setInfoAdapter(francais : Boolean){
-        adapter = RecyclerAdapter(this,motListDisplayed,francais)
+        adapter = RecyclerAdapter(this,motListDisplayed,francais,resources)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
 
         recycler.layoutManager = layoutManager

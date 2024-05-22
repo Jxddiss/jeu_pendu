@@ -33,4 +33,6 @@
     <string name="mot">Word :</string>
     <string name="difficultePartie">Difficulty :</string>
     <string name="temp">"Time : "</string>
+    <string name="mot_ajoute">Word added!</string>
+    <string name="champ_vide">Empty inputs!</string>
 </resources>

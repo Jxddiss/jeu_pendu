@@ -25,7 +25,7 @@ class PartieJoueeDAO(private val helper: DatabaseHelper) {
     fun getAllPartiesJouees():List<PartieJouee>{
         val partieList = mutableListOf<PartieJouee>()
         val db = helper.readableDatabase
-        val query = "SELECT * FROM ${DatabaseHelper.TABLE_NAME_PARTIE_JOUE}"
+        val query = "SELECT * FROM ${DatabaseHelper.TABLE_NAME_PARTIE_JOUE} ORDER BY id DESC"
         val cursor = db.rawQuery(query,null)
         while (cursor.moveToNext()){
             val id = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID_PARTIE_JOUE))

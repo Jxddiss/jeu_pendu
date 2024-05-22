@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Intent
 import android.graphics.Color
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
@@ -34,6 +35,9 @@ class PenduJeuActivity : AppCompatActivity() {
     val motDAO = MotDAO(databaseHelper)
     val partieJoueeDAO = PartieJoueeDAO(databaseHelper)
     var debutGame : Long = 0
+
+    // source son : https://stackoverflow.com/questions/45870632/play-sounds-from-raw-file-in-kotlin
+    lateinit var mediaPlayer : MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -143,6 +147,10 @@ class PenduJeuActivity : AppCompatActivity() {
             .getIdentifier("error_${jeu.nbErreurs}","drawable",packageName))
             .into(gifImageView)
 
+        mediaPlayer = MediaPlayer.create(this,R.raw.pop)
+        mediaPlayer.setVolume(0.5f,0.5f)
+        mediaPlayer.start()
+
         btn.postDelayed({
             btn.background.setTint(Color.GRAY)
             btn.background.alpha = 100
@@ -154,7 +162,21 @@ class PenduJeuActivity : AppCompatActivity() {
                 .load(resources
                 .getIdentifier("phase_${jeu.nbErreurs+1}","drawable",packageName))
                 .into(gifImageView)
+
+            mediaPlayer.stop()
+            mediaPlayer = MediaPlayer.create(this,R.raw.error)
+            mediaPlayer.setVolume(0.5f,0.5f)
+            mediaPlayer.start()
         },400)
+
+        if (jeu.nbErreurs == 6){
+            btn.postDelayed({
+                mediaPlayer.stop()
+                mediaPlayer = MediaPlayer.create(this,R.raw.falling)
+                mediaPlayer.setVolume(0.5f,0.5f)
+                mediaPlayer.start()
+            },500)
+        }
     }
 
     /**
@@ -185,6 +207,10 @@ class PenduJeuActivity : AppCompatActivity() {
      * */
     private fun handleBonChoix(btn : ImageButton, resultPosition : ArrayList<Int> ){
         btn.isClickable = false
+        mediaPlayer = MediaPlayer.create(this,R.raw.success)
+        mediaPlayer.setVolume(0.5f,0.5f)
+        mediaPlayer.start()
+
         for (result in resultPosition){
             val image = letterPlaceholder[result]
             btn.postDelayed({

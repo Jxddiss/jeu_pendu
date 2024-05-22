@@ -9,14 +9,15 @@
 
     <TextView
         android:id="@+id/messageFin"
-        android:layout_width="322dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="265dp"
+        android:layout_width="329dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="176dp"
         android:fontFamily="@font/caveat"
         android:text="@string/message_game_over"
         android:textAlignment="center"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

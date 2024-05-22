@@ -43,7 +43,7 @@
     <string name="page_preference_bouton_accueil">Page d\'accueil</string>
 
     <string name="recommencer">Recommencer</string>
-    <string name="message_game_over">Vous avez perdu</string>
+    <string name="message_game_over">Vous avez perdu \n mot: %1$s</string>
     <string name="menu">Menu</string>
     <string name="facile">Facile</string>
     <string name="normal">Normal</string>

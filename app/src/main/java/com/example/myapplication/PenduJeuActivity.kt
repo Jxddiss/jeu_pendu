@@ -129,6 +129,7 @@ class PenduJeuActivity : AppCompatActivity() {
                 val partieJouee = PartieJouee(jeu.motADeviner, choixDifficulte,temp,false)
                 partieJoueeDAO.insertPartie(partieJouee)
                 intent.putExtra("reussi",false)
+                intent.putExtra("mot",jeu.motADeviner)
                 startActivity(intent)
             },2700)
         }
@@ -237,5 +238,4 @@ class PenduJeuActivity : AppCompatActivity() {
             btn.background.alpha = 100
                         },200)
     }
-
 }

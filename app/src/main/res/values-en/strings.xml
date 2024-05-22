@@ -21,7 +21,7 @@
     <string name="page_preference_bouton_accueil">Home page</string>
 
     <string name="recommencer">Retry</string>
-    <string name="message_game_over">You lost</string>
+    <string name="message_game_over">You lost! \n word :  %1$s</string>
     <string name="menu">Menu</string>
     <string name="Retirer">Delete</string>
     <string name="nouveau_mot">New word</string>

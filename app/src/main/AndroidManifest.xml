@@ -12,12 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".HistoriqueActivity"
+            android:exported="false" />
         <activity
             android:name=".DictionnaryActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".GameOverActivity"
             android:exported="false" />

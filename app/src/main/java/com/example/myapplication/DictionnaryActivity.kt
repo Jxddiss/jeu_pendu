@@ -1,13 +1,16 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -88,14 +91,7 @@ class DictionnaryActivity : AppCompatActivity() {
             }
         }
 
-        // Set l'option de spinner selectionner selon le choix de difficultée
-        when(choixDifficulte){
-            "facile"-> spinnerRecherche.setSelection(0)
-            "normal"-> spinnerRecherche.setSelection(1)
-            "difficile"-> spinnerRecherche.setSelection(2)
-            "easy"-> spinnerRecherche.setSelection(0)
-            "hard"-> spinnerRecherche.setSelection(2)
-        }
+        setDiffRecherche(choixDifficulte)
 
         /*
         * Ajout d'un event listenner qui va appeler la méthode updateDif selon
@@ -123,15 +119,29 @@ class DictionnaryActivity : AppCompatActivity() {
 
         //Ajout d'un mot dans la base de données
         btnAjouter.setOnClickListener {
+            var message = ""
 
             val dao = MotDAO(DatabaseHelper(this))
             var motfr = francaisAjout.text.toString().lowercase()
             var moten = anglaisAjout.text.toString().lowercase()
             var diff = spinnerAjout.selectedItem.toString().lowercase()
-            dao.insertMot(motfr,moten,diff)
-            onResume()
+            if (motfr.isNotEmpty() && moten.isNotEmpty()){
+                dao.insertMot(motfr,moten,diff)
+                motList.clear()
+                motList.addAll(motDAO.getAllMot())
+                motListDisplayed.clear()
+                motListDisplayed.addAll(motList)
+                updateDif(diff)
+                setDiffRecherche(diff)
+                message = getString(R.string.mot_ajoute)
+            }else{
+                message = getString(R.string.champ_vide)
+            }
+            francaisAjout.text.clear()
+            anglaisAjout.text.clear()
+            it.hideKeyboard()
+            Toast.makeText(this,message,Toast.LENGTH_LONG).show()
         }
-
     }
 
     /**
@@ -176,11 +186,33 @@ class DictionnaryActivity : AppCompatActivity() {
         recycler.adapter = adapter
     }
 
+    fun setDiffRecherche(difficulte: String){
+        // Set l'option de spinner selectionner selon le choix de difficultée
+        when(difficulte){
+            "facile"-> spinnerRecherche.setSelection(0)
+            "normal"-> spinnerRecherche.setSelection(1)
+            "difficile"-> spinnerRecherche.setSelection(2)
+            "easy"-> spinnerRecherche.setSelection(0)
+            "hard"-> spinnerRecherche.setSelection(2)
+        }
+    }
+
+    /**
+     * Pour fermer le clavier après avoir insérer un mot
+     *
+     * source : https://stackoverflow.com/questions/41790357/close-hide-the-android-soft-keyboard-with-kotlin
+     * */
+    fun View.hideKeyboard() {
+        val inputManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputManager.hideSoftInputFromWindow(windowToken, 0)
+    }
+
     override fun onResume() {
         super.onResume()
 
         motList.clear()
         motList.addAll(motDAO.getAllMot())
+        motListDisplayed.clear()
         motListDisplayed.addAll(motList)
         adapter.notifyDataSetChanged()
     }

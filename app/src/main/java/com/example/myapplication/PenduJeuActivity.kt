@@ -18,7 +18,9 @@ import com.example.myapplication.MainActivity.Companion.choixDifficulte
 import com.example.myapplication.MainActivity.Companion.choixLangue
 import com.example.myapplication.databasehelper.DatabaseHelper
 import com.example.myapplication.databasehelper.MotDAO
+import com.example.myapplication.databasehelper.PartieJoueeDAO
 import com.example.myapplication.model.Jeu
+import com.example.myapplication.model.PartieJouee
 
 private const val NB_ERREURS_MAX = 6
 
@@ -30,15 +32,16 @@ class PenduJeuActivity : AppCompatActivity() {
     lateinit var listeMotString : ArrayList<String>
     val databaseHelper = DatabaseHelper(this)
     val motDAO = MotDAO(databaseHelper)
+    val partieJoueeDAO = PartieJoueeDAO(databaseHelper)
+    var debutGame : Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
 
         listeMotString = motDAO.getAllMotStringByLangue(choixLangue, choixDifficulte) as ArrayList
-        if(listeMotString.isEmpty()){
-            listeMotString = mutableListOf("Allo","test") as ArrayList
-        }
+
+        debutGame = System.currentTimeMillis()
 
         btnRecommencer = findViewById(R.id.btnRestartJeu)
 
@@ -82,7 +85,7 @@ class PenduJeuActivity : AppCompatActivity() {
      * @param btn  ImageButton qui vient d'être cliqué
      * */
     private fun handleVerificationBouton(btn : ImageButton){
-        var resultPosition : ArrayList<Int>  = jeu.essayerUneLettre(btn.contentDescription[0])
+        val resultPosition : ArrayList<Int>  = jeu.essayerUneLettre(btn.contentDescription[0])
 
         if (resultPosition.isEmpty()){
             blinkError(btn)
@@ -92,12 +95,20 @@ class PenduJeuActivity : AppCompatActivity() {
 
         if (jeu.estRéussi()){
             btn.postDelayed({
-                var intent : Intent = Intent(this, MainActivity::class.java)
+                val intent  = Intent(this, MainActivity::class.java)
+                val finGame = System.currentTimeMillis()
+                val temp = finGame - debutGame
+                val partieJouee = PartieJouee(jeu.motADeviner, choixDifficulte,temp,true)
+                partieJoueeDAO.insertPartie(partieJouee)
                 startActivity(intent)
             },600)
         }else if(jeu.nbErreurs >= NB_ERREURS_MAX){
             btn.postDelayed({
-                var intent : Intent = Intent(this, GameOverActivity::class.java)
+                val intent  = Intent(this, GameOverActivity::class.java)
+                val finGame = System.currentTimeMillis()
+                val temp = finGame - debutGame
+                val partieJouee = PartieJouee(jeu.motADeviner, choixDifficulte,temp,false)
+                partieJoueeDAO.insertPartie(partieJouee)
                 startActivity(intent)
             },2700)
         }
@@ -152,7 +163,7 @@ class PenduJeuActivity : AppCompatActivity() {
      * */
     private fun initialiserLetterPlaceHolder(){
         for (i in 0 until jeu.motADeviner.length){
-            val image : ImageView = ImageView(this)
+            val image = ImageView(this)
             image.layoutParams = ViewGroup.LayoutParams(100,100)
 
             if (jeu.motADeviner[i] != ' '){

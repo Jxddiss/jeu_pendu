@@ -29,4 +29,10 @@
     <string name="mot_anglais">English word :</string>
     <string name="une_difficulte">Difficulty</string>
     <string name="Ajouter">Add</string>
+    <string name="reussi">Succeded ?</string>
+    <string name="mot">Word :</string>
+    <string name="difficultePartie">Difficulty :</string>
+    <string name="temp">"Time : "</string>
+    <string name="mot_ajoute">Word added!</string>
+    <string name="champ_vide">Empty inputs!</string>
 </resources>

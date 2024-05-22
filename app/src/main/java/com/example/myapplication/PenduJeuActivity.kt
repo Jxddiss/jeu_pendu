@@ -29,6 +29,8 @@ class PenduJeuActivity : AppCompatActivity() {
     lateinit var gifImageView: ImageView
     lateinit var letterPlaceholder: LinearLayout
     lateinit var btnRecommencer: Button
+    lateinit var btnPreference: Button
+    lateinit var btnHistorique: Button
     lateinit var jeu: Jeu
     lateinit var listeMotString : ArrayList<String>
     val databaseHelper = DatabaseHelper(this)
@@ -53,6 +55,18 @@ class PenduJeuActivity : AppCompatActivity() {
             it.background.setTint(Color.GRAY)
             it.background.alpha = 100
             this.recreate()
+        }
+
+        btnHistorique = findViewById(R.id.btnHistoriqueJeu)
+        btnHistorique.setOnClickListener {
+            val intent = Intent(this,HistoriqueActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnPreference = findViewById(R.id.btnPreferenceJeu)
+        btnPreference.setOnClickListener {
+            val intentPreference = Intent(this, PreferencesActivity::class.java)
+            startActivity(intentPreference)
         }
 
         jeu = Jeu(listeMotString)

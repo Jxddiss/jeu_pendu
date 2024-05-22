@@ -45,7 +45,7 @@
             android:layout_height="46dp"
             android:fontFamily="@font/caveat"
             android:text="@string/difficultePartie"
-            android:textSize="24sp" />
+            android:textSize="34sp" />
 
         <TextView
             android:id="@+id/difficultePartie"
@@ -53,7 +53,7 @@
             android:layout_height="54dp"
             android:fontFamily="@font/caveat"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="34sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,6 +83,7 @@
                 android:layout_gravity="fill"
                 android:fontFamily="@font/caveat"
                 android:text="TextView"
+                android:textColor="#3AAEE4"
                 android:textSize="24sp" />
         </LinearLayout>
 

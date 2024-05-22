@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
-    android:background="@drawable/btn_background"
+    android:background="@drawable/border"
     android:baselineAligned="false"
     android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="247dp"
         android:layout_height="176dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:orientation="vertical">
@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@+id/textView10"
-                android:layout_width="63dp"
+                android:layout_width="54dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caveat"
                 android:text="@string/mot"
@@ -33,11 +33,12 @@
             <TextView
                 android:id="@+id/motPartie"
                 android:layout_width="158dp"
-                android:layout_height="73dp"
+                android:layout_height="64dp"
                 android:fontFamily="@font/caveat"
                 android:text="TextView"
                 android:textAllCaps="true"
-                android:textSize="34sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
@@ -58,7 +59,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="167dp"
+        android:layout_width="174dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -89,13 +90,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="152dp"
+            android:layout_height="110dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/ReussiTextView"
-                android:layout_width="107dp"
+                android:layout_width="104dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/caveat"

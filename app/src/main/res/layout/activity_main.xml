@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="294dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/btn_background"
+        android:layout_width="349dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/border"
         android:fontFamily="@font/caveat"
         android:outlineProvider="none"
         android:text="@string/jeu_du_pendu"

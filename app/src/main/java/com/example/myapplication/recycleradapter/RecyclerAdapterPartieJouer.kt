@@ -2,6 +2,7 @@ package com.example.myapplication.recycleradapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,8 +48,10 @@ class RecyclerAdapterPartieJouer(private val context: Context,
         holder.difficulteText.text = partie.difficulte
         if (partie.reussite){
             holder.imgReussite.setBackgroundResource(R.drawable.success)
+            holder.motText.setTextColor(Color.parseColor("#02b311"))
         }else{
             holder.imgReussite.setBackgroundResource(R.drawable.failed)
+            holder.motText.setTextColor(Color.RED)
         }
     }
 }

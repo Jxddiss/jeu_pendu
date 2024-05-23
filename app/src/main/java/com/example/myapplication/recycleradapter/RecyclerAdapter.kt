@@ -3,6 +3,8 @@ package com.example.myapplication.recycleradapter
 import android.app.Dialog
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,6 +55,7 @@ class RecyclerAdapter(
         var dialog = Dialog(context)
         dialog.setContentView(R.layout.dialog)
         dialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_bg)
         dialog.setCancelable(false)
 
         val btnDialogCancel : Button = dialog.findViewById(R.id.btnCancelDialog)

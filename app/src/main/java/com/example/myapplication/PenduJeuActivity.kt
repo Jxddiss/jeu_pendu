@@ -120,6 +120,7 @@ class PenduJeuActivity : AppCompatActivity() {
                 partieJoueeDAO.insertPartie(partieJouee)
                 intent.putExtra("reussi",true)
                 startActivity(intent)
+                finish()
             },600)
         }else if(jeu.nbErreurs >= NB_ERREURS_MAX){
             btn.postDelayed({
@@ -131,6 +132,7 @@ class PenduJeuActivity : AppCompatActivity() {
                 intent.putExtra("reussi",false)
                 intent.putExtra("mot",jeu.motADeviner)
                 startActivity(intent)
+                finish()
             },2700)
         }
     }

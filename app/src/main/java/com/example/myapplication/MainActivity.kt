@@ -74,17 +74,7 @@ class MainActivity : AppCompatActivity() {
             motDAO.insertMot("chocolat", "chocolate", "easy")
             motDAO.insertMot("gateau", "cake", "normal")
             motDAO.insertMot("fromage", "cheese", "easy")
-            motDAO.insertMot("cryptographie", "cryptography", "hard")
-            motDAO.insertMot("bureaucratie", "bureaucracy", "hard")
-            motDAO.insertMot("electromagnétisme", "electromagnetism", "hard")
-            motDAO.insertMot("phenomenologie", "phenomenology", "hard")
-            motDAO.insertMot("revolutionnaire", "revolutionary", "hard")
-            motDAO.insertMot("philosophique", "philosophical", "hard")
-            motDAO.insertMot("astronomique", "astronomical", "hard")
-            motDAO.insertMot("microscopique", "microscopic", "hard")
-            motDAO.insertMot("bioluminescence", "bioluminescence", "hard")
             motDAO.insertMot("archeologie", "archaeology", "hard")
-            motDAO.insertMot("socioeconomique", "socioeconomic", "hard")
             motDAO.insertMot("paradoxal", "paradoxical", "hard")
         }
 

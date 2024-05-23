@@ -19,7 +19,7 @@ class PartieJoueeDAO(private val helper: DatabaseHelper) {
         }
 
         db.insert(DatabaseHelper.TABLE_NAME_PARTIE_JOUE,null,values)
-        //db.close()
+        db.close()
     }
 
     fun getAllPartiesJouees():List<PartieJouee>{
@@ -41,5 +41,11 @@ class PartieJoueeDAO(private val helper: DatabaseHelper) {
         cursor.close()
         db.close()
         return partieList
+    }
+
+    fun clearHistorique(){
+        val db = helper.writableDatabase
+        db.delete(DatabaseHelper.TABLE_NAME_PARTIE_JOUE,null,null)
+        db.close()
     }
 }

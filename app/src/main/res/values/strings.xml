@@ -43,11 +43,13 @@
     <string name="page_preference_bouton_accueil">Page d\'accueil</string>
 
     <string name="recommencer">Recommencer</string>
-    <string name="message_game_over">Vous avez perdu</string>
+    <string name="message_game_over">Vous avez perdu \n mot: %1$s</string>
     <string name="menu">Menu</string>
     <string name="facile">Facile</string>
     <string name="normal">Normal</string>
     <string name="difficile">Difficile</string>
+    <string name="easy">Facile</string>
+    <string name="hard">Difficile</string>
     <string name="Retirer">Retirer</string>
     <string name="title_activity_dictionnaire" translatable="false">DictionnaireActivity</string>
     <string name="nouveau_mot">Nouveau mot</string>
@@ -62,6 +64,14 @@
     <string name="mot_ajoute">Mot ajouté avec succès</string>
     <string name="champ_vide">Tout les champs doivent être remplie</string>
     <string name="message_gagne">Vous avez gagné !</string>
+    <string name="veuillez_entrer_le_mot_francais">Veuillez entrer le mot francais!</string>
+    <string name="veuillez_entrer_le_mot_anglais">Veuillez entrer le mot anglais!</string>
+    <string name="confirmer_la_suppression">confirmer la suppression</string>
+    <string name="etes_vous_sure">Êtes vous sure?</string>
+    <string name="mot_supprime">Mot supprimé avec succès!</string>
+    <string name="annuler">annuler</string>
+    <string name="confirmer">confirmer</string>
+    <string name="vider_historique">Vider l\'historique</string>
 
 
 </resources>

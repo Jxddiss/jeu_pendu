@@ -41,7 +41,7 @@ class GameOverActivity : AppCompatActivity() {
             mediaPlayer.setVolume(0.5f,0.5f)
             mediaPlayer.start()
         }else{
-            messageFin.text = getString(R.string.message_game_over)
+            messageFin.text = getString(R.string.message_game_over,intent.getStringExtra("mot"))
         }
     }
 }

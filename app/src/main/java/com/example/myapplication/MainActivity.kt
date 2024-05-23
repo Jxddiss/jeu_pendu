@@ -35,10 +35,57 @@ class MainActivity : AppCompatActivity() {
         // == Vérification si la base de données est vide et on la remplit si c'est le cas
         val listeMotString = motDAO.getAllMot() as ArrayList
         if(listeMotString.isEmpty()){
+            /*
+            * mot a être inséré dans la base de données si elle est  vide
+            *
+            * source : ChatGPT
+            * */
             motDAO.insertMot("bonjour","hi","easy")
             motDAO.insertMot("test","test","easy")
             motDAO.insertMot("histoire","history","normal")
             motDAO.insertMot("salopette","overall","hard")
+            motDAO.insertMot("chien", "dog", "easy")
+            motDAO.insertMot("chat", "cat", "easy")
+            motDAO.insertMot("maison", "house", "normal")
+            motDAO.insertMot("ordinateur", "computer", "normal")
+            motDAO.insertMot("livre", "book", "hard")
+            motDAO.insertMot("papillon", "butterfly", "easy")
+            motDAO.insertMot("voiture", "car", "normal")
+            motDAO.insertMot("velo", "bike", "easy")
+            motDAO.insertMot("ecole", "school", "normal")
+            motDAO.insertMot("stylo", "pen", "easy")
+            motDAO.insertMot("souris", "mouse", "normal")
+            motDAO.insertMot("jardin", "garden", "easy")
+            motDAO.insertMot("travail", "work", "hard")
+            motDAO.insertMot("cafe", "coffee", "easy")
+            motDAO.insertMot("plage", "beach", "normal")
+            motDAO.insertMot("soleil", "sun", "easy")
+            motDAO.insertMot("lune", "moon", "normal")
+            motDAO.insertMot("etoile", "star", "easy")
+            motDAO.insertMot("chapeau", "hat", "normal")
+            motDAO.insertMot("crayon", "pencil", "easy")
+            motDAO.insertMot("robe", "dress", "normal")
+            motDAO.insertMot("chemise", "shirt", "easy")
+            motDAO.insertMot("pantalon", "pants", "normal")
+            motDAO.insertMot("montagne", "mountain", "easy")
+            motDAO.insertMot("foret", "forest", "normal")
+            motDAO.insertMot("lac", "lake", "easy")
+            motDAO.insertMot("riviere", "river", "normal")
+            motDAO.insertMot("chocolat", "chocolate", "easy")
+            motDAO.insertMot("gateau", "cake", "normal")
+            motDAO.insertMot("fromage", "cheese", "easy")
+            motDAO.insertMot("cryptographie", "cryptography", "hard")
+            motDAO.insertMot("bureaucratie", "bureaucracy", "hard")
+            motDAO.insertMot("electromagnétisme", "electromagnetism", "hard")
+            motDAO.insertMot("phenomenologie", "phenomenology", "hard")
+            motDAO.insertMot("revolutionnaire", "revolutionary", "hard")
+            motDAO.insertMot("philosophique", "philosophical", "hard")
+            motDAO.insertMot("astronomique", "astronomical", "hard")
+            motDAO.insertMot("microscopique", "microscopic", "hard")
+            motDAO.insertMot("bioluminescence", "bioluminescence", "hard")
+            motDAO.insertMot("archeologie", "archaeology", "hard")
+            motDAO.insertMot("socioeconomique", "socioeconomic", "hard")
+            motDAO.insertMot("paradoxal", "paradoxical", "hard")
         }
 
         val extras = intent.extras

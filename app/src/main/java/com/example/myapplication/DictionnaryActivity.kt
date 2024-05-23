@@ -25,7 +25,6 @@ class DictionnaryActivity : AppCompatActivity() {
     lateinit var motList : ArrayList<Mot> // Liste de tous les mots de la base de données
     lateinit var motListDisplayed : ArrayList<Mot> // Liste de mots utilisée pour afficher
     lateinit var recycler : RecyclerView
-
     lateinit var btnAjouter : Button
     lateinit var radioGroup: RadioGroup
     lateinit var spinnerRecherche : Spinner
@@ -127,15 +126,20 @@ class DictionnaryActivity : AppCompatActivity() {
                 motList.clear()
                 motList.addAll(motDAO.getAllMot())
                 motListDisplayed.clear()
-                motListDisplayed.addAll(motList)
                 updateDif(diff)
                 setDiffRecherche(diff)
                 message = getString(R.string.mot_ajoute)
+                francaisAjout.text.clear()
+                anglaisAjout.text.clear()
             }else{
+                if (motfr.isEmpty()){
+                    francaisAjout.error = getString(R.string.veuillez_entrer_le_mot_francais)
+                }
+                if (moten.isEmpty()){
+                    anglaisAjout.error = getString(R.string.veuillez_entrer_le_mot_anglais)
+                }
                 message = getString(R.string.champ_vide)
             }
-            francaisAjout.text.clear()
-            anglaisAjout.text.clear()
             it.hideKeyboard()
             Toast.makeText(this,message,Toast.LENGTH_LONG).show()
         }
@@ -164,7 +168,6 @@ class DictionnaryActivity : AppCompatActivity() {
             .filter { mot -> mot.difficulte == difficulte
                     || mot.difficulte == tradDifficulte } as ArrayList
 
-        println(motListDisplayed)
         setInfoAdapter(radioGroup.checkedRadioButtonId == R.id.boutonFrancais)
     }
 
@@ -175,7 +178,7 @@ class DictionnaryActivity : AppCompatActivity() {
      * à jour si c'est le cas
      * */
     fun setInfoAdapter(francais : Boolean){
-        adapter = RecyclerAdapter(this,motListDisplayed,francais)
+        adapter = RecyclerAdapter(this,motListDisplayed,francais,resources)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
 
         recycler.layoutManager = layoutManager

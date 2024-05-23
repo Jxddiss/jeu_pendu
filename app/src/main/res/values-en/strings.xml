@@ -21,7 +21,7 @@
     <string name="page_preference_bouton_accueil">Home page</string>
 
     <string name="recommencer">Retry</string>
-    <string name="message_game_over">You lost</string>
+    <string name="message_game_over">You lost! \n word :  %1$s</string>
     <string name="menu">Menu</string>
     <string name="Retirer">Delete</string>
     <string name="nouveau_mot">New word</string>
@@ -36,4 +36,14 @@
     <string name="mot_ajoute">Word added!</string>
     <string name="champ_vide">Empty inputs!</string>
     <string name="message_gagne">You won!</string>
+    <string name="easy">Easy</string>
+    <string name="hard">Hard</string>
+    <string name="veuillez_entrer_le_mot_francais">You have to put the french word !</string>
+    <string name="veuillez_entrer_le_mot_anglais">You have to put the english word !</string>
+    <string name="confirmer_la_suppression">confirm suppression</string>
+    <string name="etes_vous_sure">Are you sure?</string>
+    <string name="mot_supprime">Word deleted!</string>
+    <string name="annuler">cancel</string>
+    <string name="confirmer">confirm</string>
+    <string name="vider_historique">Clear history</string>
 </resources>

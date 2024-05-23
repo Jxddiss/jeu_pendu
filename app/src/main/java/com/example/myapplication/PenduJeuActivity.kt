@@ -33,6 +33,7 @@ class PenduJeuActivity : AppCompatActivity() {
     lateinit var btnPreference: Button
     lateinit var btnHistorique: Button
     lateinit var jeu: Jeu
+    lateinit var btnLettreListe : ArrayList<ImageButton>
     lateinit var listeMotString : ArrayList<String>
     val databaseHelper = DatabaseHelper(this)
     val motDAO = MotDAO(databaseHelper)
@@ -46,34 +47,37 @@ class PenduJeuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
 
+        //Initialisation des variables
         listeMotString = motDAO.getAllMotStringByLangue(choixLangue, choixDifficulte) as ArrayList
-
         debutGame = System.currentTimeMillis()
 
-        btnRecommencer = findViewById(R.id.btnRestartJeu)
+        jeu = Jeu(listeMotString)
+        gifImageView = findViewById(R.id.animGifImageView)
+        letterPlaceholder = findViewById(R.id.linearLayLettresMot)
+        initialiserLetterPlaceHolder()
 
+        btnLettreListe = ArrayList()
+        btnRecommencer = findViewById(R.id.btnRestartJeu)
+        btnHistorique = findViewById(R.id.btnHistoriqueJeu)
+        btnPreference = findViewById(R.id.btnPreferenceJeu)
+
+        //OnclickListeners sur les bouttons
         btnRecommencer.setOnClickListener {
             it.background.setTint(Color.GRAY)
             it.background.alpha = 100
             this.recreate()
         }
 
-        btnHistorique = findViewById(R.id.btnHistoriqueJeu)
         btnHistorique.setOnClickListener {
             val intent = Intent(this,HistoriqueActivity::class.java)
             startActivity(intent)
         }
 
-        btnPreference = findViewById(R.id.btnPreferenceJeu)
         btnPreference.setOnClickListener {
             val intentPreference = Intent(this, PreferencesActivity::class.java)
             startActivity(intentPreference)
         }
 
-        jeu = Jeu(listeMotString)
-        gifImageView = findViewById(R.id.animGifImageView)
-        letterPlaceholder = findViewById(R.id.linearLayLettresMot)
-        initialiserLetterPlaceHolder()
 
         /* Pour chaque position dans l'alphabet on charge le bouton qui
         * lui correspond et on associe un event listenner qui vas vérifier
@@ -81,7 +85,7 @@ class PenduJeuActivity : AppCompatActivity() {
         */
         for (i in 0..25){
             val btn : ImageButton = findViewById(resources.getIdentifier("btn"+(i+1),"id",packageName))
-
+            btnLettreListe.add(btn)
             btn.setOnClickListener{
                 handleVerificationBouton(it as ImageButton)
             }
@@ -105,8 +109,7 @@ class PenduJeuActivity : AppCompatActivity() {
      * */
     private fun handleVerificationBouton(btn : ImageButton){
         // Désactivation des boutons
-        for (i in 0..25){
-            val btnLettre : ImageButton = findViewById(resources.getIdentifier("btn"+(i+1),"id",packageName))
+        for (btnLettre in btnLettreListe){
             btnLettre.isClickable = false
         }
 
@@ -144,8 +147,7 @@ class PenduJeuActivity : AppCompatActivity() {
         }else{
             // Réactivation des autres bouttons
             btn.postDelayed({
-                for (i in 0..25){
-                    val btnLettre : ImageButton = findViewById(resources.getIdentifier("btn"+(i+1),"id",packageName))
+                for (btnLettre in btnLettreListe){
                     if (btnLettre.id != btn.id){
                         btnLettre.isClickable = true
                     }

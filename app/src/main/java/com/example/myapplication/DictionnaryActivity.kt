@@ -135,6 +135,12 @@ class DictionnaryActivity : AppCompatActivity() {
                 setDiffRecherche(diff)
                 message = getString(R.string.mot_ajoute)
             }else{
+                if (motfr.isEmpty()){
+                    francaisAjout.error = getString(R.string.veuillez_entrer_le_mot_francais)
+                }
+                if (moten.isEmpty()){
+                    anglaisAjout.error = getString(R.string.veuillez_entrer_le_mot_anglais)
+                }
                 message = getString(R.string.champ_vide)
             }
             francaisAjout.text.clear()

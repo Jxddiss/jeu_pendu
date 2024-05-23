@@ -38,4 +38,6 @@
     <string name="message_gagne">You won!</string>
     <string name="easy">Easy</string>
     <string name="hard">Hard</string>
+    <string name="veuillez_entrer_le_mot_francais">You have to put the french word !</string>
+    <string name="veuillez_entrer_le_mot_anglais">You have to put the english word !</string>
 </resources>

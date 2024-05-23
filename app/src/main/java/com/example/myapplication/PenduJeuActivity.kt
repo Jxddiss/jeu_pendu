@@ -14,6 +14,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.view.get
+import androidx.core.view.postDelayed
 import com.bumptech.glide.Glide
 import com.example.myapplication.MainActivity.Companion.choixDifficulte
 import com.example.myapplication.MainActivity.Companion.choixLangue
@@ -103,6 +104,12 @@ class PenduJeuActivity : AppCompatActivity() {
      * @param btn  ImageButton qui vient d'être cliqué
      * */
     private fun handleVerificationBouton(btn : ImageButton){
+        // Désactivation des boutons
+        for (i in 0..25){
+            val btnLettre : ImageButton = findViewById(resources.getIdentifier("btn"+(i+1),"id",packageName))
+            btnLettre.isClickable = false
+        }
+
         val resultPosition : ArrayList<Int>  = jeu.essayerUneLettre(btn.contentDescription[0])
 
         if (resultPosition.isEmpty()){
@@ -134,6 +141,16 @@ class PenduJeuActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             },2700)
+        }else{
+            // Réactivation des autres bouttons
+            btn.postDelayed({
+                for (i in 0..25){
+                    val btnLettre : ImageButton = findViewById(resources.getIdentifier("btn"+(i+1),"id",packageName))
+                    if (btnLettre.id != btn.id){
+                        btnLettre.isClickable = true
+                    }
+                }
+            },700)
         }
     }
 
@@ -147,7 +164,6 @@ class PenduJeuActivity : AppCompatActivity() {
      * */
     private fun blinkError(btn : ImageButton) {
         jeu.nbErreurs++
-        btn.isClickable = false
 
         val anim : ObjectAnimator = ObjectAnimator.ofInt(btn.background,
             "tint", Color.RED, Color.BLACK, Color.RED)
@@ -223,7 +239,6 @@ class PenduJeuActivity : AppCompatActivity() {
      * trouve dans le mot
      * */
     private fun handleBonChoix(btn : ImageButton, resultPosition : ArrayList<Int> ){
-        btn.isClickable = false
         mediaPlayer = MediaPlayer.create(this,R.raw.success)
         mediaPlayer.setVolume(0.5f,0.5f)
         mediaPlayer.start()

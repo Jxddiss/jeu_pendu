@@ -45,5 +45,5 @@
     <string name="mot_supprime">Word deleted!</string>
     <string name="annuler">cancel</string>
     <string name="confirmer">confirm</string>
-    <string name="vider_historique">Clear history</string>
+    <string name="vider_historique">Clear history 🗑️</string>
 </resources>

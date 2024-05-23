@@ -21,7 +21,7 @@ class MotDAO(private val helper: DatabaseHelper) {
     fun getAllMot():List<Mot>{
         val motList = mutableListOf<Mot>()
         val db = helper.readableDatabase
-        val query = "SELECT * FROM ${DatabaseHelper.TABLE_NAME}"
+        val query = "SELECT * FROM ${DatabaseHelper.TABLE_NAME} ORDER BY id DESC"
         val cursor = db.rawQuery(query,null)
         while (cursor.moveToNext()){
             val id = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID))

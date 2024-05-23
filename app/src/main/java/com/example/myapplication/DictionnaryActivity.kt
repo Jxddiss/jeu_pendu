@@ -129,10 +129,11 @@ class DictionnaryActivity : AppCompatActivity() {
                 motList.clear()
                 motList.addAll(motDAO.getAllMot())
                 motListDisplayed.clear()
-                motListDisplayed.addAll(motList)
                 updateDif(diff)
                 setDiffRecherche(diff)
                 message = getString(R.string.mot_ajoute)
+                francaisAjout.text.clear()
+                anglaisAjout.text.clear()
             }else{
                 if (motfr.isEmpty()){
                     francaisAjout.error = getString(R.string.veuillez_entrer_le_mot_francais)
@@ -142,8 +143,6 @@ class DictionnaryActivity : AppCompatActivity() {
                 }
                 message = getString(R.string.champ_vide)
             }
-            francaisAjout.text.clear()
-            anglaisAjout.text.clear()
             it.hideKeyboard()
             Toast.makeText(this,message,Toast.LENGTH_LONG).show()
         }
@@ -172,7 +171,6 @@ class DictionnaryActivity : AppCompatActivity() {
             .filter { mot -> mot.difficulte == difficulte
                     || mot.difficulte == tradDifficulte } as ArrayList
 
-        println(motListDisplayed)
         setInfoAdapter(radioGroup.checkedRadioButtonId == R.id.boutonFrancais)
     }
 

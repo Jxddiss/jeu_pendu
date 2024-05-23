@@ -28,7 +28,6 @@ class DictionnaryActivity : AppCompatActivity() {
     lateinit var motList : ArrayList<Mot> // Liste de tout les mots de la base de donnée
     lateinit var motListDisplayed : ArrayList<Mot> // Liste de mot utiliser pour afficher
     lateinit var recycler : RecyclerView
-
     lateinit var btnAjouter : Button
     lateinit var radioGroup: RadioGroup
     lateinit var spinnerRecherche : Spinner

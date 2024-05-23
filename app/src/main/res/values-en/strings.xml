@@ -40,4 +40,9 @@
     <string name="hard">Hard</string>
     <string name="veuillez_entrer_le_mot_francais">You have to put the french word !</string>
     <string name="veuillez_entrer_le_mot_anglais">You have to put the english word !</string>
+    <string name="confirmer_la_suppression">confirm suppression</string>
+    <string name="etes_vous_sure">Are you sure?</string>
+    <string name="mot_supprime">Word deleted!</string>
+    <string name="annuler">cancel</string>
+    <string name="confirmer">confirm</string>
 </resources>

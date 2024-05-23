@@ -66,6 +66,11 @@
     <string name="message_gagne">Vous avez gagné !</string>
     <string name="veuillez_entrer_le_mot_francais">Veuillez entrer le mot francais!</string>
     <string name="veuillez_entrer_le_mot_anglais">Veuillez entrer le mot anglais!</string>
+    <string name="confirmer_la_suppression">confirmer la suppression</string>
+    <string name="etes_vous_sure">Êtes vous sure?</string>
+    <string name="mot_supprime">Mot supprimé avec succès!</string>
+    <string name="annuler">annuler</string>
+    <string name="confirmer">confirmer</string>
 
 
 </resources>

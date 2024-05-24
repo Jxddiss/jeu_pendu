@@ -71,7 +71,7 @@
     <string name="mot_supprime">Mot supprimé avec succès!</string>
     <string name="annuler">annuler</string>
     <string name="confirmer">confirmer</string>
-    <string name="vider_historique">Vider l\'historique</string>
+    <string name="vider_historique">Vider l\'historique 🗑️</string>
 
 
 </resources>

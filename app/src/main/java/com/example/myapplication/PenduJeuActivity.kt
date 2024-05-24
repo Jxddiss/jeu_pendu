@@ -32,6 +32,7 @@ class PenduJeuActivity : AppCompatActivity() {
     lateinit var btnPreference: Button
     lateinit var btnHistorique: Button
     lateinit var jeu: Jeu
+    lateinit var btnLettreListe : ArrayList<ImageButton>
     lateinit var listeMotString : ArrayList<String>
     val databaseHelper = DatabaseHelper(this)
     val motDAO = MotDAO(databaseHelper)
@@ -45,34 +46,37 @@ class PenduJeuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
 
+        //Initialisation des variables
         listeMotString = motDAO.getAllMotStringByLangue(choixLangue, choixDifficulte) as ArrayList
-
         debutGame = System.currentTimeMillis()
 
-        btnRecommencer = findViewById(R.id.btnRestartJeu)
+        jeu = Jeu(listeMotString)
+        gifImageView = findViewById(R.id.animGifImageView)
+        letterPlaceholder = findViewById(R.id.linearLayLettresMot)
+        initialiserLetterPlaceHolder()
 
+        btnLettreListe = ArrayList()
+        btnRecommencer = findViewById(R.id.btnRestartJeu)
+        btnHistorique = findViewById(R.id.btnHistoriqueJeu)
+        btnPreference = findViewById(R.id.btnPreferenceJeu)
+
+        //OnclickListeners sur les bouttons
         btnRecommencer.setOnClickListener {
             it.background.setTint(Color.GRAY)
             it.background.alpha = 100
             this.recreate()
         }
 
-        btnHistorique = findViewById(R.id.btnHistoriqueJeu)
         btnHistorique.setOnClickListener {
             val intent = Intent(this,HistoriqueActivity::class.java)
             startActivity(intent)
         }
 
-        btnPreference = findViewById(R.id.btnPreferenceJeu)
         btnPreference.setOnClickListener {
             val intentPreference = Intent(this, PreferencesActivity::class.java)
             startActivity(intentPreference)
         }
 
-        jeu = Jeu(listeMotString)
-        gifImageView = findViewById(R.id.animGifImageView)
-        letterPlaceholder = findViewById(R.id.linearLayLettresMot)
-        initialiserLetterPlaceHolder()
 
         /* Pour chaque position dans l'alphabet on charge le bouton qui
         * lui correspond et on associe un event listenner qui vas vérifier
@@ -80,11 +84,11 @@ class PenduJeuActivity : AppCompatActivity() {
         */
         for (i in 0..25){
             val btn : ImageButton = findViewById(resources.getIdentifier("btn"+(i+1),"id",packageName))
-
+            btnLettreListe.add(btn)
             btn.setOnClickListener{
                 handleVerificationBouton(it as ImageButton)
             }
-       }
+        }
 
         /*
         * Librairie qui permet d'animer des gifs
@@ -98,15 +102,39 @@ class PenduJeuActivity : AppCompatActivity() {
     }
 
     /**
+     * Méthode qui permet d'initialiser le linear layout avec le nombre de charactère
+     * du mot a deviné
+     *
+     * Aide : https://stackoverflow.com/questions/5042197/android-set-height-and-width-of-custom-view-programmatically
+     * */
+    private fun initialiserLetterPlaceHolder(){
+        for (i in 0 until jeu.motADeviner.length){
+            val image = ImageView(this)
+            image.layoutParams = ViewGroup.LayoutParams(100,100)
+
+            if (jeu.motADeviner[i] != ' '){
+                image.setBackgroundResource(R.drawable.btn_background)
+            }
+
+            letterPlaceholder.addView(image)
+        }
+    }
+
+    /**
      * Méthode qui permet de verifier si le joueur à gagné le jeu et qui renvoie le joueur a une nouvelle activité
      *
      * @param btn  ImageButton qui vient d'être cliqué
      * */
     private fun handleVerificationBouton(btn : ImageButton){
+        // Désactivation des boutons
+        for (btnLettre in btnLettreListe){
+            btnLettre.isClickable = false
+        }
+
         val resultPosition : ArrayList<Int>  = jeu.essayerUneLettre(btn.contentDescription[0])
 
         if (resultPosition.isEmpty()){
-            blinkError(btn)
+            handleMauvaisChoix(btn)
         }else{
             handleBonChoix(btn,resultPosition)
         }
@@ -134,34 +162,36 @@ class PenduJeuActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             },2700)
+        }else{
+            // Réactivation des autres bouttons
+            btn.postDelayed({
+                for (btnLettre in btnLettreListe){
+                    if (btnLettre.id != btn.id){
+                        btnLettre.isClickable = true
+                    }
+                }
+            },700)
         }
     }
 
     /**
      * Méthode qui permet d'animer le bouton si la lettre donnée n'est pas
-     * dans le mot
+     * dans le mot avec la bonne couleur et qui change l'animation selon
+     * le nombre d'erreurs
      *
      * Source : https://stackoverflow.com/questions/2614545/animate-change-of-view-background-color-on-android
      *
      * @param btn  Bouton qui sera animé
      * */
-    private fun blinkError(btn : ImageButton) {
+    private fun handleMauvaisChoix(btn : ImageButton) {
         jeu.nbErreurs++
-        btn.isClickable = false
 
-        val anim : ObjectAnimator = ObjectAnimator.ofInt(btn.background,
-            "tint", Color.RED, Color.BLACK, Color.RED)
-
-        anim.setDuration(200)
-        anim.setEvaluator(ArgbEvaluator())
-        anim.repeatMode = ValueAnimator.REVERSE
-        anim.repeatCount = 3
-        anim.start()
+        blink(btn,Color.RED)
 
         Glide.with(this)
             .asGif()
             .load(resources
-            .getIdentifier("error_${jeu.nbErreurs}","drawable",packageName))
+                .getIdentifier("error_${jeu.nbErreurs}","drawable",packageName))
             .into(gifImageView)
 
         mediaPlayer = MediaPlayer.create(this,R.raw.pop)
@@ -169,15 +199,10 @@ class PenduJeuActivity : AppCompatActivity() {
         mediaPlayer.start()
 
         btn.postDelayed({
-            btn.background.setTint(Color.GRAY)
-            btn.background.alpha = 100
-        },200*5)
-
-        btn.postDelayed({
             Glide.with(this)
                 .asGif()
                 .load(resources
-                .getIdentifier("phase_${jeu.nbErreurs+1}","drawable",packageName))
+                    .getIdentifier("phase_${jeu.nbErreurs+1}","drawable",packageName))
                 .into(gifImageView)
 
             mediaPlayer.stop()
@@ -197,25 +222,6 @@ class PenduJeuActivity : AppCompatActivity() {
     }
 
     /**
-     * Méthode qui permet d'initialiser le linear layout avec le nombre de charactère
-     * du mot a deviné
-     *
-     * Aide : https://stackoverflow.com/questions/5042197/android-set-height-and-width-of-custom-view-programmatically
-     * */
-    private fun initialiserLetterPlaceHolder(){
-        for (i in 0 until jeu.motADeviner.length){
-            val image = ImageView(this)
-            image.layoutParams = ViewGroup.LayoutParams(100,100)
-
-            if (jeu.motADeviner[i] != ' '){
-                image.setBackgroundResource(R.drawable.btn_background)
-            }
-
-            letterPlaceholder.addView(image)
-        }
-    }
-
-    /**
      * Méthode qui se lance dans le cas ou une lettre se trouve bel et bien dans le mot
      *
      * @param btn  ImageButton qui vient d'être cliqué
@@ -223,10 +229,11 @@ class PenduJeuActivity : AppCompatActivity() {
      * trouve dans le mot
      * */
     private fun handleBonChoix(btn : ImageButton, resultPosition : ArrayList<Int> ){
-        btn.isClickable = false
         mediaPlayer = MediaPlayer.create(this,R.raw.success)
         mediaPlayer.setVolume(0.5f,0.5f)
         mediaPlayer.start()
+
+        blink(btn,Color.GREEN)
 
         for (result in resultPosition){
             val image = letterPlaceholder[result]
@@ -235,9 +242,28 @@ class PenduJeuActivity : AppCompatActivity() {
                     .getIdentifier(btn.contentDescription[0].lowercase(),"drawable",packageName))
             }, 150)
         }
+    }
+
+    /**
+     * Méthode qui rajoute une animation qui fait clignoter le bouton selon
+     * la couleur donnée en paramètre
+     *
+     * @param btn ImageButton à faire clignoter
+     * @param couleur Int couleur représentant la couleur du clignotement
+     * */
+    private fun blink(btn : ImageButton, color : Int){
+        val anim : ObjectAnimator = ObjectAnimator.ofInt(btn.background,
+            "tint", color, Color.BLACK, color)
+
+        anim.setDuration(200)
+        anim.setEvaluator(ArgbEvaluator())
+        anim.repeatMode = ValueAnimator.REVERSE
+        anim.repeatCount = 3
+        anim.start()
+
         btn.postDelayed({
             btn.background.setTint(Color.GRAY)
             btn.background.alpha = 100
-                        },200)
+        },1000)
     }
 }

@@ -65,14 +65,16 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_weight="1"
-        android:backgroundTint="#880707"
+        android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/caveat"
         android:padding="12dp"
         android:text="@string/vider_historique"
         android:textAllCaps="true"
-        android:textColor="@color/white"
+        android:textColor="#DD2828"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partieJoueeRecycler" />
+        app:layout_constraintTop_toBottomOf="@+id/partieJoueeRecycler"
+        app:strokeColor="#DE3434"
+        app:strokeWidth="2dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

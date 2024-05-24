@@ -3,11 +3,13 @@ package com.example.myapplication
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
@@ -62,8 +64,6 @@ class PenduJeuActivity : AppCompatActivity() {
 
         //OnclickListeners sur les bouttons
         btnRecommencer.setOnClickListener {
-            it.background.setTint(Color.GRAY)
-            it.background.alpha = 100
             this.recreate()
         }
 
@@ -179,7 +179,6 @@ class PenduJeuActivity : AppCompatActivity() {
      * dans le mot avec la bonne couleur et qui change l'animation selon
      * le nombre d'erreurs
      *
-     * Source : https://stackoverflow.com/questions/2614545/animate-change-of-view-background-color-on-android
      *
      * @param btn  Bouton qui sera animé
      * */
@@ -247,6 +246,8 @@ class PenduJeuActivity : AppCompatActivity() {
     /**
      * Méthode qui rajoute une animation qui fait clignoter le bouton selon
      * la couleur donnée en paramètre
+     *
+     * Source : https://stackoverflow.com/questions/2614545/animate-change-of-view-background-color-on-android
      *
      * @param btn ImageButton à faire clignoter
      * @param couleur Int couleur représentant la couleur du clignotement

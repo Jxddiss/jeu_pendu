@@ -131,6 +131,8 @@ class PenduJeuActivity : AppCompatActivity() {
             btnLettre.isClickable = false
         }
 
+        btnLettreListe.remove(btn)
+
         val resultPosition : ArrayList<Int>  = jeu.essayerUneLettre(btn.contentDescription[0])
 
         if (resultPosition.isEmpty()){
@@ -166,9 +168,7 @@ class PenduJeuActivity : AppCompatActivity() {
             // Réactivation des autres bouttons
             btn.postDelayed({
                 for (btnLettre in btnLettreListe){
-                    if (btnLettre.id != btn.id){
-                        btnLettre.isClickable = true
-                    }
+                    btnLettre.isClickable = true
                 }
             },700)
         }
@@ -222,10 +222,10 @@ class PenduJeuActivity : AppCompatActivity() {
     }
 
     /**
-     * Méthode qui se lance dans le cas ou une lettre se trouve bel et bien dans le mot
+     * Méthode qui se lance dans le cas où une lettre se trouve bel et bien dans le mot
      *
      * @param btn  ImageButton qui vient d'être cliqué
-     * @param resultPosition  ArrayList<Int> qui représente les position ou la lettre se
+     * @param resultPosition  ArrayList<Int> qui représente les positions où la lettre se
      * trouve dans le mot
      * */
     private fun handleBonChoix(btn : ImageButton, resultPosition : ArrayList<Int> ){

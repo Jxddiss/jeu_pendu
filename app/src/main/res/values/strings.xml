@@ -36,7 +36,7 @@
     <string name="lettre_z" translatable="false">Z</string>
     <string name="choix_languageFr">Français</string>
     <string name="choix_languageEn">Anglais</string>
-    <string name="choix_niveau_difficulté">Chisissez votre difficulté:</string>
+    <string name="choix_niveau_difficulté">Choisissez votre difficulté:</string>
     <string name="choix_niveau_difficulté_facile">Facile</string>
     <string name="choix_niveau_difficulté_normal">Normal</string>
     <string name="choix_niveau_difficulté_difficile">Difficile</string>

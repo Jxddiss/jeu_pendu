@@ -3,11 +3,15 @@ package com.example.myapplication
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
+import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
@@ -25,7 +29,7 @@ import com.example.myapplication.model.PartieJouee
 
 private const val NB_ERREURS_MAX = 6
 
-class PenduJeuActivity : AppCompatActivity() {
+class PenduJeuActivity : AppCompatActivity(), OnTouchListener {
     lateinit var gifImageView: ImageView
     lateinit var letterPlaceholder: LinearLayout
     lateinit var btnRecommencer: Button
@@ -42,6 +46,7 @@ class PenduJeuActivity : AppCompatActivity() {
     // source son : https://stackoverflow.com/questions/45870632/play-sounds-from-raw-file-in-kotlin
     lateinit var mediaPlayer : MediaPlayer
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pendu_jeu)
@@ -65,15 +70,21 @@ class PenduJeuActivity : AppCompatActivity() {
             this.recreate()
         }
 
+        btnRecommencer.setOnTouchListener(this)
+
         btnHistorique.setOnClickListener {
             val intent = Intent(this,HistoriqueActivity::class.java)
             startActivity(intent)
         }
 
+        btnHistorique.setOnTouchListener(this)
+
         btnPreference.setOnClickListener {
             val intentPreference = Intent(this, PreferencesActivity::class.java)
             startActivity(intentPreference)
         }
+
+        btnPreference.setOnTouchListener(this)
 
 
         /* Pour chaque position dans l'alphabet on charge le bouton qui
@@ -86,6 +97,8 @@ class PenduJeuActivity : AppCompatActivity() {
             btn.setOnClickListener{
                 handleVerificationBouton(it as ImageButton)
             }
+
+            btn.setOnTouchListener(this)
         }
 
         /*
@@ -248,7 +261,7 @@ class PenduJeuActivity : AppCompatActivity() {
      * Source : https://stackoverflow.com/questions/2614545/animate-change-of-view-background-color-on-android
      *
      * @param btn ImageButton à faire clignoter
-     * @param couleur Int couleur représentant la couleur du clignotement
+     * @param color Int couleur représentant la couleur du clignotement
      * */
     private fun blink(btn : ImageButton, color : Int){
         val anim : ObjectAnimator = ObjectAnimator.ofInt(btn.background,
@@ -264,5 +277,33 @@ class PenduJeuActivity : AppCompatActivity() {
             btn.background.setTint(Color.GRAY)
             btn.background.alpha = 100
         },1000)
+    }
+
+    /**
+     * override du onTouch pour permettre de mettre les boutons en gris s'il
+     * sont appuyer longuement
+     *
+     * source : https://stackoverflow.com/questions/47170075/kotlin-ontouchlistener-called-but-it-does-not-override-performclick
+     * */
+    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+        var btn : Button? = null
+
+        if (v is Button){
+            btn = v
+        }
+        when (event?.action){
+            MotionEvent.ACTION_DOWN -> {
+                v?.background?.setTint(Color.GRAY)
+                btn?.setTextColor(Color.GRAY)
+                v?.background?.alpha = 200
+            }
+            MotionEvent.ACTION_UP -> {
+                v?.background?.setTint(Color.BLACK)
+                btn?.setTextColor(Color.BLACK)
+                v?.background?.alpha = 255
+                v?.performClick()
+            }
+        }
+        return true
     }
 }

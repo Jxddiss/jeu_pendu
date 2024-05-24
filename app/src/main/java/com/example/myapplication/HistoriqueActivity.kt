@@ -1,10 +1,12 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
@@ -33,6 +35,7 @@ class HistoriqueActivity : AppCompatActivity() {
 
     private val databaseHelper = DatabaseHelper(this)
     val partieJoueeDAO = PartieJoueeDAO(databaseHelper)
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,6 +48,24 @@ class HistoriqueActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        // boutton gris pendant click long
+        btnRetourMenu.setOnTouchListener { _, event ->
+            when (event.action){
+                MotionEvent.ACTION_DOWN -> {
+                    btnRetourMenu.background.setTint(Color.GRAY)
+                    btnRetourMenu.setTextColor(Color.GRAY)
+                    btnRetourMenu.background.alpha = 200
+                }
+                MotionEvent.ACTION_UP -> {
+                    btnRetourMenu.background.setTint(Color.BLACK)
+                    btnRetourMenu.setTextColor(Color.BLACK)
+                    btnRetourMenu.background.alpha = 255
+                    btnRetourMenu.performClick()
+                }
+            }
+            true
         }
 
         partieList = partieJoueeDAO.getAllPartiesJouees() as ArrayList
@@ -75,7 +96,7 @@ class HistoriqueActivity : AppCompatActivity() {
         }
     }
 
-    fun setInfoAdapter(){
+    private fun setInfoAdapter(){
         adapter = RecyclerAdapterPartieJouer(this,partieList,resources)
         var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(applicationContext)
 

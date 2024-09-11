@@ -291,17 +291,20 @@ class PenduJeuActivity : AppCompatActivity(), OnTouchListener {
         if (v is Button){
             btn = v
         }
-        when (event?.action){
-            MotionEvent.ACTION_DOWN -> {
-                v?.background?.setTint(Color.GRAY)
-                btn?.setTextColor(Color.GRAY)
-                v?.background?.alpha = 200
-            }
-            MotionEvent.ACTION_UP -> {
-                v?.background?.setTint(Color.BLACK)
-                btn?.setTextColor(Color.BLACK)
-                v?.background?.alpha = 255
-                v?.performClick()
+        if(v?.isClickable == true){
+            when (event?.action){
+                MotionEvent.ACTION_DOWN -> {
+                    v.background?.setTint(Color.GRAY)
+                    btn?.setTextColor(Color.GRAY)
+                    v.background?.alpha = 200
+                }
+                MotionEvent.ACTION_UP -> {
+
+                        v.background.setTint(Color.BLACK)
+                        btn?.setTextColor(Color.BLACK)
+                        v.background.alpha = 255
+                        v.performClick()
+                }
             }
         }
         return true
